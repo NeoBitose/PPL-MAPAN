@@ -1,0 +1,123 @@
+*{
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+.navbar-brand img{
+  width: 30px;
+  height: 30px;
+}
+.navbar button{
+  width: 83px;
+  height: 35px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+.hero{
+  background-image: url('../img/hero.png');
+  background-size: cover;
+  background-repeat: none;
+  width: 100vw;
+}
+.hero-desc{
+  margin-top: 120px;
+}
+.hero h1{
+  font-size: 48px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 30px;
+}
+.hero h1 span{
+  color: #FA9B0D;
+}
+.hero p{
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 40px;
+}
+.hero button{
+  width: 173px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  border: solid 2px #A4C763;
+}
+.card-group{
+  background-image: url('../img/card-bg.png');
+  background-size: 100vw 80vh;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 80vh;
+}
+.contains{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0px auto;
+}
+.main-foot h1{
+  font-size: 32px;
+  font-weight: 600;
+  color: white;
+}
+.main-foot i{
+  color: white;
+  
+}
+.main-foot .fab, .fas::before{
+  font-size: 26px;
+}
+.footer-link{
+  font-size: 15px;
+}
+.footer-link h4{
+  font-size: 15px;
+  color: #27AE60;
+}
+.footer-link a{
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+}
+.copyright h4{
+  font-size: 14px;
+  font-weight: 600;
+}
+label{
+  font-size: 20px;
+  margin-left: 10px;
+}
+.diagnosa-btn{
+  background-color: #53B28E;
+  width: 230px;
+  height: 64px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  color: white;
+}
+.diagnosa-card h1{
+  font-size: 60px;
+}
+.diagnosa-card h3{
+  font: size 32px;
+}
+.hasil-diagnosa{
+  background-color: #E6E6E6;
+}
+@media(min-width: 768px){
+  .navbar{
+    height: 80px;
+  }
+  .nav-link{
+    margin-left: 20px;
+  }
+  .hero-diagnosa{
+    margin-top: 80px ;
+  }
+}
+
+
