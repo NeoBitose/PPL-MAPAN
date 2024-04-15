@@ -2,8 +2,8 @@
 @section('content')
   <nav class="bg-white navbar fixed-top navbar-expand-lg ">
     <div class="container w-100 bg-white contain-nav">
-      <a class="w-25 navbar-brand" href="#">
-        <img src="{{asset('img/logos.png')}}" alt=""> Mapan
+      <a class="w-25 navbar-brand align-items-center" href="#">
+        <img src="{{asset('img/logo_mapan.png')}}" alt=""> Mapan
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">

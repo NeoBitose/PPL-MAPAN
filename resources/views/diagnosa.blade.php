@@ -3,7 +3,7 @@
   <nav class="bg-white navbar fixed-top navbar-expand-lg ">
     <div class="container w-100 bg-white contain-nav">
       <a class="w-25 navbar-brand" href="#">
-        <img src="{{ asset('img/logos.png') }}" alt=""> Mapan
+        <img src="{{ asset('img/logo_mapan.png') }}" alt=""> Mapan
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,8 @@
   </div>
 
   <div class="form py-5">
-    <form action="" method="" class="">
+    <form action="/hasil-diagnosa" method="POST" class="" enctype="multipart/form-data">
+      @csrf
       <div class="accordion accordion-flush" id="accordionFlushExample">
         <div class="container">
           <div class="accordion-item daun">

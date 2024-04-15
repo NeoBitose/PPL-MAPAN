@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DiagnosaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ Route::get('/', function () {
 Route::get('/diagnosa', function () {
     return view('diagnosa');
 });
+Route::post('/hasil-diagnosa', [DiagnosaController::class, 'diagnosa']);
 
 
 Route::get('/dashboard', function () {
