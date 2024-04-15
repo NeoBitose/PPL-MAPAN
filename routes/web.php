@@ -18,9 +18,7 @@ use App\Http\Controllers\DiagnosaController;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/diagnosa', function () {
-    return view('diagnosa');
-});
+Route::resource('/diagnosa', DiagnosaController::class);
 Route::post('/hasil-diagnosa', [DiagnosaController::class, 'diagnosa']);
 
 
