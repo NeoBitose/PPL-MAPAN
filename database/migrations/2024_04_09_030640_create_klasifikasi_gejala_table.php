@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jenis_padi', function (Blueprint $table) {
-            $table->increments('id_jenis_padi');
-            $table->string('nama_padi', 50);
-            $table->text('deskripsi');
+        Schema::create('klasifikasi_gejala', function (Blueprint $table) {
+            $table->increments('id_klasifikasi_gejala');
+            $table->string('nama_bagian', 30);
         });
     }
 
@@ -23,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('jenis_padi');
+        Schema::dropIfExists('klasifikasi_gejala');
     }
 };

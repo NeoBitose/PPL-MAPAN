@@ -18,9 +18,6 @@ return new class extends Migration
             $table->text('penyebab');
             $table->text('pengendalian_teknis');
             $table->text('pengendalian_gejala');
-            $table->unsignedInteger('jenis_padi_id');
-
-            $table->foreign('jenis_padi_id')->references('id_jenis_padi')->on('jenis_padi');
         });
     }
 

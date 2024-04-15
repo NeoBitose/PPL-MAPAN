@@ -15,8 +15,8 @@ return new class extends Migration
             $table->increments('id_komentar');
             $table->date('tgl_komentar');
             $table->text('komentar');
+            $table->unsignedBigInteger('users_id');
             $table->unsignedInteger('postingan_id');
-            $table->unsignedInteger('user_id');
 
             $table->foreign('postingan_id')->references('id_postingan')->on('postingan');
         });

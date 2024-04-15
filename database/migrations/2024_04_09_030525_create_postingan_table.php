@@ -17,9 +17,9 @@ return new class extends Migration
             $table->text('deskripsi');
             $table->date('tgl_upload');
             $table->text('gambar_postingan');
-            $table->unsignedInteger('user_id');
+            $table->unsignedBigInteger('users_id');
 
-            $table->foreign('user_id')->references('id_user')->on('user');
+            $table->foreign('users_id')->references('id')->on('users');
         });
     }
 
