@@ -13,7 +13,7 @@
         <div class="d-lg-flex d-sm-block w-100">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-50 justify-content-end">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+              <a class="nav-link active" aria-current="page" href="/">Beranda</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/diagnosa">Deteksi Penyakit</a>
@@ -48,54 +48,16 @@
   <div class="card-group d-flex align-items-center">
     <div class="contains">
       <div class="row">
+        @for ($i = 0; $i < count($penyakit); $i++)
         <div class="col">
           <div class="card" style="">
             <img src="{{asset('img/card-img.png')}}" class="card-img-top img-fluid" alt="...">
             <div class="card-body">
-              <h5 class="card-title text-center px-5 py-3 text-primary fw-medium fs-4">Bercak Coklat</h5>
+              <h5 class="card-title text-center px-5 py-3 text-primary fw-medium fs-4">{{$penyakit[$i]->nama_penyakit}}</h5>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card" style="">
-            <img src="{{asset('img/card-img.png')}}" class="card-img-top img-fluid" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center px-5 py-3 text-primary fw-medium fs-4">Bercak Coklat</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="">
-            <img src="{{asset('img/card-img.png')}}" class="card-img-top img-fluid" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center px-5 py-3 text-primary fw-medium fs-4">Bercak Coklat</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="">
-            <img src="{{asset('img/card-img.png')}}" class="card-img-top img-fluid" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center px-5 py-3 text-primary fw-medium fs-4">Bercak Coklat</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="">
-            <img src="{{asset('img/card-img.png')}}" class="card-img-top img-fluid" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center px-5 py-3 text-primary fw-medium fs-4">Bercak Coklat</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="">
-            <img src="{{asset('img/card-img.png')}}" class="card-img-top img-fluid" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center px-5 py-3 text-primary fw-medium fs-4">Bercak Coklat</h5>
-            </div>
-          </div>
-        </div>
+        @endfor
       </div>
     </div>
   </div>

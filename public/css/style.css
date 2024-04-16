@@ -117,6 +117,12 @@ label{
 .main-deteksi{
   height: 70vh;
 }
+.card-body{
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media(min-width: 768px){
   .navbar{
     height: 80px;
