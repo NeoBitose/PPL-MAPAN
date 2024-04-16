@@ -87,10 +87,10 @@ class DiagnosaController extends Controller
     public function diagnosa(Request $request){
         // $konfirmasi = Alert::question('Apakah Inputan Sudah Sesuai?', '* Semakin sedikit inputan semakin tidak akurat (Optimal input : 3)');
         // dd($konfirmasi);
-        if ($request->gejala == null) {
-            Alert::error('Data tidak boleh kosong', '');
-            return redirect('/diagnosa');
-        }
+        // if ($request->gejala == null) {
+        //     Alert::error('', '');
+        //     return redirect('/diagnosa');
+        // }
 
         $gejala = $request->gejala;
         $input = "";

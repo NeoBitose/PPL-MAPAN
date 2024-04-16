@@ -39,7 +39,7 @@
   </div>
   <div class="main-deteksi">
     <div class="form py-5">
-      <form action="/hasil-diagnosa" method="POST" class="" enctype="multipart/form-data">
+      <form action="/hasil-diagnosa" method="POST" id="form-deteksi" class="form" enctype="multipart/form-data">
         @csrf
         <div class="accordion accordion-flush" id="accordionFlushExample">
           <div class="container">
@@ -140,7 +140,7 @@
           </div>
         </div>
         <div class="container pt-5">
-          <button class="diagnosa-btn" type="submit" data-confirm-delete="true">Kirim</button>
+          <button class="diagnosa-btn confirm" type="submit" data-confirm-delete="true">Kirim</button>
         </div>
       </form>
     </div>
