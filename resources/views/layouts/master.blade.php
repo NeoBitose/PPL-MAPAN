@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="{{asset('fontawesome/css/solid.css')}}">
 </head>
 <body>
+  @include('sweetalert::alert')
   @yield('content')
   <script src="{{asset('bootstrap/js/bootstrap.bundle.js')}}"></script>
 

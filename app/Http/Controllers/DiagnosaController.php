@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Http;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class DiagnosaController extends Controller
 {
@@ -84,8 +85,17 @@ class DiagnosaController extends Controller
     }
 
     public function diagnosa(Request $request){
+        // dd($request);
+        // dd($konfirmasi);
+        if ($request->gejala == null) {
+            Alert::error('Data tidak boleh kosong', '');
+            return redirect('/diagnosa');
+        }
+        $title = 'Apakah inputan sudah sesuai?';
+        $text = 'semakin sedikit inputan semakin tidak akurat (Optional input: 3)';
+        
+        confirmDelete($title,$text);
         $gejala = $request->gejala;
-        // dd($gejala);
         $input = "";
         for ($i=0; $i < count($gejala); $i++) { 
             if ($i == 0) {
@@ -93,22 +103,11 @@ class DiagnosaController extends Controller
             }else{
                 $input = $input." ".$gejala[$i];
             }
-            
         }
-        // dd($input);
-        // $client = new Client([
-        //     'base_uri' => 'http://127.0.0.1:5000/',
-        //     'timeout' => 5000.0,
-        // ]);
-        
         $response = Http::withUrlParameters([
             'endpoint' => 'http://127.0.0.1:5000',
             'gejala' => $input,
         ])->acceptJson()->get('{+endpoint}/diagnosa/{gejala}');
-        
-        // Assuming the API returns JSON data
-        // $data = json_decode($response->getBody(), true);
-
         $diags = DB::table('penyakit')
                     ->where('nama_penyakit', $response->body())
                     ->first();
@@ -129,9 +128,6 @@ class DiagnosaController extends Controller
         $this->param['tangkai'] = $tangkai;
         $this->param['malai'] = $malai;
         $this->param['diagnosa'] = [$diags];
-
-        // dd($this->param);
-        // dd($this->param);
         return view('diagnosa', $this->param);
     }
 }

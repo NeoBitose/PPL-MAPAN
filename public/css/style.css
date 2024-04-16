@@ -117,11 +117,18 @@ label{
 .main-deteksi{
   height: 70vh;
 }
-.card-body{
+.card-landing {
   height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.swal2-container .swal2-title{
+  font-size: 28px;
+}
+.swal2-container .swal2-html-container{
+  font-size: 14px;
+  color: red;
 }
 @media(min-width: 768px){
   .navbar{

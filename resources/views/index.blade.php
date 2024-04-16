@@ -52,7 +52,7 @@
         <div class="col">
           <div class="card" style="">
             <img src="{{asset('img/card-img.png')}}" class="card-img-top img-fluid" alt="...">
-            <div class="card-body">
+            <div class="card-landing card-body">
               <h5 class="card-title text-center px-5 py-3 text-primary fw-medium fs-4">{{$penyakit[$i]->nama_penyakit}}</h5>
             </div>
           </div>

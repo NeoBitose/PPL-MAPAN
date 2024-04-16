@@ -140,7 +140,7 @@
           </div>
         </div>
         <div class="container pt-5">
-          <button class="diagnosa-btn">Kirim</button>
+          <button class="diagnosa-btn" data-confirm-delete="true">Kirim</button>
         </div>
       </form>
     </div>
