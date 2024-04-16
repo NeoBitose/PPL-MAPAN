@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('penyebab');
             $table->text('pengendalian_teknis');
             $table->text('pengendalian_gejala');
+            $table->text('foto_penyakit');
         });
     }
 

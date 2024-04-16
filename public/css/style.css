@@ -55,6 +55,11 @@ body{
   width: 100vw;
   height: 80vh;
 }
+.card img{
+  width: 280px;
+  height: 290px;
+  object-fit: cover;
+}
 .contains{
   width: 90%;
   display: flex;

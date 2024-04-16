@@ -85,16 +85,13 @@ class DiagnosaController extends Controller
     }
 
     public function diagnosa(Request $request){
-        // dd($request);
+        // $konfirmasi = Alert::question('Apakah Inputan Sudah Sesuai?', '* Semakin sedikit inputan semakin tidak akurat (Optimal input : 3)');
         // dd($konfirmasi);
         if ($request->gejala == null) {
             Alert::error('Data tidak boleh kosong', '');
             return redirect('/diagnosa');
         }
-        $title = 'Apakah inputan sudah sesuai?';
-        $text = 'semakin sedikit inputan semakin tidak akurat (Optional input: 3)';
-        
-        confirmDelete($title,$text);
+
         $gejala = $request->gejala;
         $input = "";
         for ($i=0; $i < count($gejala); $i++) { 
@@ -128,6 +125,9 @@ class DiagnosaController extends Controller
         $this->param['tangkai'] = $tangkai;
         $this->param['malai'] = $malai;
         $this->param['diagnosa'] = [$diags];
+        $title = 'Apakah inputan sudah sesuai?';
+        $text = 'semakin sedikit inputan semakin tidak akurat (Optional input: 3)';
+    
         return view('diagnosa', $this->param);
     }
 }

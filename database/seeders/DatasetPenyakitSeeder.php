@@ -29,6 +29,7 @@ class DatasetPenyakitSeeder extends Seeder
             "penyebab" => "lorem",
             "pengendalian_teknis" => "lorem",
             "pengendalian_gejala" => "lorem",
+            "foto_penyakit" => "bercak_coklat.jpg" 
         ]);
         $gejala =  DB::table('gejala')->insert([
             "gejala" => "Bercak pada tangkai",
@@ -77,6 +78,7 @@ class DatasetPenyakitSeeder extends Seeder
             "penyebab" => "lorem",
             "pengendalian_teknis" => "lorem",
             "pengendalian_gejala" => "lorem",
+            "foto_penyakit" => "blast.jpg"
         ]);
         $gejala =  DB::table('gejala')->insert([
             "gejala" => "Daun dan pelepah terdapat bercak",
@@ -125,6 +127,7 @@ class DatasetPenyakitSeeder extends Seeder
             "penyebab" => "lorem",
             "pengendalian_teknis" => "lorem",
             "pengendalian_gejala" => "lorem",
+            "foto_penyakit" => "rumput_kerdil.jpg"
         ]);
         $gejala =  DB::table('gejala')->insert([
             "gejala" => "Banyak anakan menyerupai rumput",
@@ -173,6 +176,7 @@ class DatasetPenyakitSeeder extends Seeder
             "penyebab" => "lorem",
             "pengendalian_teknis" => "lorem",
             "pengendalian_gejala" => "lorem",
+            "foto_penyakit" => "hawar_pelepah_daun.jpg"
         ]);
         $gejala =  DB::table('gejala')->insert([
             "gejala" => "Daun yang terserang mengering mulai ujung",
@@ -213,6 +217,7 @@ class DatasetPenyakitSeeder extends Seeder
             "penyebab" => "lorem",
             "pengendalian_teknis" => "lorem",
             "pengendalian_gejala" => "lorem",
+            "foto_penyakit" => "tungro.jpg"
         ]);
         $gejala =  DB::table('gejala')->insert([
             "gejala" => "Pertumbuhan tanaman kerdil",
@@ -269,6 +274,7 @@ class DatasetPenyakitSeeder extends Seeder
             "penyebab" => "lorem",
             "pengendalian_teknis" => "lorem",
             "pengendalian_gejala" => "lorem",
+            "foto_penyakit" => "kresek.jpg"
         ]);
         $gejala =  DB::table('gejala')->insert([
             "gejala" => "Umumnya menyerang pada tanaman muda (1-2 minggu)",
