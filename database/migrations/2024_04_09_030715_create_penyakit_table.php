@@ -15,7 +15,6 @@ return new class extends Migration
             $table->increments('id_penyakit');
             $table->string('nama_penyakit', 50);
             $table->text('definisi');
-            $table->text('penyebab');
             $table->text('pengendalian_teknis');
             $table->text('pengendalian_gejala');
             $table->text('foto_penyakit');
