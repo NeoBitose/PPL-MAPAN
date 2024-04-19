@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('komentar', function (Blueprint $table) {
             $table->increments('id_komentar');
-            $table->date('tgl_komentar');
-            $table->text('komentar');
+            $table->date('tgl_komentar')->nullable();
+            $table->text('komentar')->nullable();
             $table->unsignedBigInteger('users_id');
             $table->unsignedInteger('postingan_id');
 

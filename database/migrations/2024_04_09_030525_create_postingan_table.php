@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('postingan', function (Blueprint $table) {
             $table->increments('id_postingan');
-            $table->string('judul_postingan');
-            $table->text('deskripsi');
+            $table->string('judul_postingan')->nullable();
+            $table->text('deskripsi')->nullable();
             $table->date('tgl_upload');
             $table->text('gambar_postingan');
             $table->smallInteger('active_nonactive');
