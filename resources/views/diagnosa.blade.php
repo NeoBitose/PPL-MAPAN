@@ -158,7 +158,7 @@
         <div class="card-body text-primary hasil-diagnosa p-4">
           <h1 class="card-title fw-bold">Penyakit {{$diagnosa[0]->nama_penyakit}}</h1>
           <p class="card-text">
-            {{$diagnosa[0]->definisi}} {{$diagnosa[0]->penyebab}}
+            {{$diagnosa[0]->definisi}}
           </p>
           <h3 class="card-title fw-bold">Pengendalian Teknis</h3>
           <p class="card-text">

@@ -111,7 +111,7 @@ class DatasetPenyakitSeeder extends Seeder
             'penyakit_id' => 2,
         ]);
         $gejala =  DB::table('gejala')->insert([
-            "gejala" => "Bercak pada daun berwarna keputih-putihan/keabu-abuan",
+            "gejala" => "Bercak pada daun berwarna keputih-putihan atau keabu-abuan",
             "klasifikasi_gejala_id" => 1,
         ]);
         DB::table('gejala_penyakit')->insert([
@@ -191,7 +191,7 @@ class DatasetPenyakitSeeder extends Seeder
             'penyakit_id' => 4,
         ]);
         $gejala =  DB::table('gejala')->insert([
-            "gejala" => "Gabah tidak terisi penuh/hampa",
+            "gejala" => "Gabah tidak terisi penuh hampa",
             "klasifikasi_gejala_id" => 3,
         ]);
         DB::table('gejala_penyakit')->insert([
@@ -271,7 +271,7 @@ class DatasetPenyakitSeeder extends Seeder
             "foto_penyakit" => "kresek.jpg"
         ]);
         $gejala =  DB::table('gejala')->insert([
-            "gejala" => "Umumnya menyerang pada tanaman muda (1-2 minggu)",
+            "gejala" => "Umumnya menyerang pada tanaman muda 1 sampai 2 minggu",
             "klasifikasi_gejala_id" => 1,
         ]);
         DB::table('gejala_penyakit')->insert([
