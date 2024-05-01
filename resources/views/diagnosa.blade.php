@@ -1,37 +1,6 @@
 @extends('layouts.master')
 @section('content')
-  <nav class="bg-white navbar fixed-top navbar-expand-lg ">
-    <div class="container w-100 bg-white contain-nav">
-      <a class="w-25 navbar-brand" href="#">
-        <img src="{{ asset('img/logo_mapan.png') }}" alt=""> Mapan
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <div class="d-lg-flex d-sm-block w-100">
-          <ul class="navbar-nav me-auto mb-3 mb-lg-0 w-50 justify-content-end">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Beranda</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/diagnosa">Deteksi Penyakit</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Forum</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Tentang</a>
-            </li>
-          </ul>
-          <div class="d-lg-flex d-sm-block w-50 justify-content-end">
-            <a href="/login"><button class="bg-warning">Login</button></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
+  
   <div class="hero-diagnosa bg-primary py-5">
     <div class="container">
       <h1 class="text-white fw-bold text-center">Deteksi Penyakit</h1>

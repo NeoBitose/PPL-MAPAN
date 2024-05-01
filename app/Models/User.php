@@ -12,8 +12,8 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $primaryKey = 'id_user';
-    protected $table = 'user';
+    protected $primaryKey = 'id';
+    protected $table = 'users';
     public $timestamps = FALSE;
 
     /**
@@ -22,7 +22,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'username',
+        'name',
         'email',
         'password',
     ];

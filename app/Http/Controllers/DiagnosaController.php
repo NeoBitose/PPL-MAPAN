@@ -108,7 +108,7 @@ class DiagnosaController extends Controller
         $diags = DB::table('penyakit')
                     ->where('nama_penyakit', $response->body())
                     ->first();
-
+        
         $daun = DB::table('gejala')
                     ->join('klasifikasi_gejala', 'gejala.klasifikasi_gejala_id', '=', 'klasifikasi_gejala.id_klasifikasi_gejala')
                     ->where('nama_bagian', 'daun')
