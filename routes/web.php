@@ -5,6 +5,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DiagnosaController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\KomentarController;
+use App\Http\Controllers\PostinganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +43,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/dash-post', [DashboardController::class, 'dashboard_postingan']);
     Route::get('/nonaktif-postingan/{id}', [DashboardController::class, 'nonaktif_postingan']);
+
+    Route::resource('/postingan', PostinganController::class);
+    Route::resource('/komentar', KomentarController::class);
 
 });
 
