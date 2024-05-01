@@ -15,4 +15,32 @@ class IndexController extends Controller
         // dd($this->param);
         return view('index', $this->param);
     }
+
+    public function forum()
+    {
+        $postingan = DB::table('postingan')
+                        ->join('users', 'postingan.users_id', "=", "users.id")
+                        ->select('id_postingan', 'judul_postingan', "deskripsi", "tgl_upload", "gambar_postingan", "name", "email")
+                        ->get();
+        $data = [];
+
+        for ($i=0; $i < count($postingan); $i++) { 
+            $komentar = DB::table('komentar')
+                            ->join('postingan', 'komentar.postingan_id', '=', 'postingan.id_postingan')
+                            ->join('users', 'komentar.users_id', '=', 'users.id')
+                            ->where('postingan_id', $postingan[$i])
+                            ->select('tgl_komentar', 'komentar', 'name', 'email')
+                            ->get();
+            $data = [
+                "id_postingan" => $postingan[$i]->id_postingan ,
+                "judul" => $postingan[$i]->judul_postingan ,
+                "deskripsi" => $postingan[$i]->deskripsi ,
+                "tgl_upload" => $postingan[$i]->tgl_upload ,
+                "gambar_postingan" => $postingan[$i]->gambar_postingan ,
+                "name" => $postingan[$i]->name ,
+                "email" => $postingan[$i]->email ,
+                "komentar" => $komentar
+            ];
+        }
+    }
 }

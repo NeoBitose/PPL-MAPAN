@@ -20,6 +20,7 @@ use App\Http\Controllers\IndexController;
 Route::get('/', [IndexController::class, 'index']);
 Route::resource('/diagnosa', DiagnosaController::class);
 Route::post('/hasil-diagnosa', [DiagnosaController::class, 'diagnosa']);
+Route::get('/forum', [IndexController::class, 'forum']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -42,5 +43,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/nonaktif-postingan/{id}', [DashboardController::class, 'nonaktif_postingan']);
 
 });
+
+
 
 require __DIR__.'/auth.php';
