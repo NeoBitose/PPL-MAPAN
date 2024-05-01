@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KomentarController extends Controller
 {
@@ -27,7 +28,11 @@ class KomentarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('komentar')->insert([
+            "komentar" => $request->komentar,
+            "users_id" => auth()->user()->id,
+            "tgl_komentar" => date("Y-m-d")
+        ]);
     }
 
     /**
@@ -43,7 +48,7 @@ class KomentarController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
     }
 
     /**
@@ -51,7 +56,9 @@ class KomentarController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        DB::table('komentar')->where('id_komentar', $id)->update([
+            "komentar" => $request->komentar,
+        ]);
     }
 
     /**
@@ -59,6 +66,6 @@ class KomentarController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        DB::table('komentar')->where('id_komentar', $id)->delete();
     }
 }
