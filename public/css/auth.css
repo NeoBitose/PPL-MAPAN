@@ -1,0 +1,127 @@
+*{
+  font-family: "Poppins";
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+.container{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.cover{
+  background-color: #fff;
+  /* max-width: 500px;
+  min-width: 250px;
+  max-height: 100vh;
+  min-height: 40vh; */
+  width: 40vh;
+  height: 100vh;
+  padding: 20px 0px;
+  box-shadow: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+label{
+  color: black;
+}
+.form{
+  width: 100%;
+  /* max-width: 500px;
+  min-width: 250px;
+  max-height: 100vh;
+  min-height: 40vh; */
+}
+.head-form{
+  margin-bottom: 20px;
+}
+.main-form{
+  margin-top: 20px;
+}
+.title-form{
+  margin: 0px 0px 0px 0px;
+  text-align: left;
+  color: black;
+}
+.form-input{
+  width: 95%;
+  height: 25px;
+  margin-top: 5px;
+  border: solid 1px black;
+  font-size: 15px;
+  padding: 5px 10px;
+}
+.input{
+  margin-bottom: 20px;
+}
+.btn-form{
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 12pt;
+  border: none;
+  background-color: black;
+  color: white;
+}
+.btn-form:hover{
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+.footer-form{
+  margin-top: 20px;
+}
+.footer-form p{
+  margin: 0px;
+}
+.footer-form a{
+  color: #A4C763;
+  text-decoration: none;
+  font-weight: 600;
+}
+.hr-violet{
+  height: 5px;
+  width: 130px;
+  background-color: #A4C763;
+  margin: 10px 0px;
+  border: 1px solid #A4C763;
+  border-radius: 15px;
+}
+.hr-grey{
+  height: 5px;
+  width: 60px;
+  background-color: lightgray;
+  margin: 10px 0px;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+}
+.flex{
+  display: flex;
+  gap: 10px;
+}
+.red-text{
+  color: red;
+}
+
+@media(min-width: 426px){
+  body{
+    background-image: url('../img/sawah.jpg');
+    background-size: cover;
+  }
+  .cover{
+    padding: 45px 35px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  .form{  
+    max-height: 70vh;
+  }
+  .cover{
+    height: auto
+  }
+}
+
