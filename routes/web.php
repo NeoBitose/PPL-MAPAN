@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DiagnosaController;
@@ -34,10 +35,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile-user', [ProfileController::class, 'show_user']);
     Route::get('/edit-admin/{id}', [ProfileController::class, 'edit_admin']);
     Route::get('/edit-user/{id}', [ProfileController::class, 'edit_user']);
-    Route::get('/update-admin/{id}', [ProfileController::class, 'update_admin']);
-    Route::get('/update-user/{id}', [ProfileController::class, 'update_user']);
+    Route::post('/update-admin/{id}', [ProfileController::class, 'update_admin']);
+    Route::post('/update-user/{id}', [ProfileController::class, 'update_user']);
 
-    
+    Route::get('/dash-post', [DashboardController::class, 'dashboard_postingan']);
+    Route::get('/nonaktif-postingan/{id}', [DashboardController::class, 'nonaktif_postingan']);
 
 });
 
