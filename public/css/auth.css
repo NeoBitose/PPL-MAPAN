@@ -79,10 +79,14 @@ label{
 .footer-form p{
   margin: 0px;
 }
-.footer-form a{
+.footer-form .log-reg{
   color: #A4C763;
   text-decoration: none;
   font-weight: 600;
+}
+.footer-form .back{
+  color: black;
+  font-weight: 400;
 }
 .hr-violet{
   height: 5px;
@@ -110,7 +114,7 @@ label{
 
 @media(min-width: 426px){
   body{
-    background-image: url('../img/sawah.jpg');
+    background-image: url('../img/bg-auth.png');
     background-size: cover;
   }
   .cover{

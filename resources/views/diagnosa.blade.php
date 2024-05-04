@@ -142,8 +142,6 @@
     </div>
     @endif
   </div>
-  
-  
   <div class="copyright text-center w-100 bg-dark py-4">
     <h4 class="text-white m-0">MAPAN Copyright © 2024 | Made With Love</h4>
   </div>

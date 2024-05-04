@@ -6,6 +6,15 @@ body{
   min-width: 100vw;
   min-height: 100vh;
 }
+.flex{
+  display: flex;
+  gap: 10px;
+}
+.navbar-brand{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
 .navbar-brand img{
   width: 45px;
   height: 45px;
@@ -17,6 +26,94 @@ body{
   color: white;
   border-radius: 5px;
 }
+.main-foot h1{
+  font-size: 32px;
+  font-weight: 600;
+  color: white;
+}
+.main-foot i{
+  color: white;
+}
+.main-foot .fab, .fas::before{
+  font-size: 26px;
+}
+.footer-link{
+  font-size: 15px;
+}
+.footer-link h4{
+  font-size: 15px;
+  color: #27AE60;
+}
+.footer-link a{
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+}
+.copyright{
+  height: 65px;
+}
+.copyright h4{
+  font-size: 14px;
+  font-weight: 600;
+}
+.profile{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.profile img{
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+.profile > p{
+  margin: 0;
+}
+.content-profile{
+  width: 100vw;
+  position: fixed;
+  z-index: 2000;
+  display: flex;
+  justify-content: end;
+  top: 70px;
+  margin: 0px auto;
+}
+.detail-content-profile{
+  display: flex;
+  justify-content: end;
+}
+.box-profile{
+  background-color: white;
+  width: 180px;
+  padding: 15px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.box-profile .logout{
+  margin-top: 15px;
+}
+.box-profile .logout button{
+  background-color: transparent;
+}
+.box-profile a {
+  text-decoration: none;
+}
+.box-profile p {
+  margin: 0;
+}
+.swal2-container .swal2-title{
+  font-size: 28px;
+}
+.swal2-container .swal2-html-container{
+  font-size: 14px;
+  color: red;
+}
+
+/* Index */
+
 .hero{
   background-image: url('../img/hero.png');
   background-size: cover;
@@ -67,36 +164,15 @@ body{
   align-items: center;
   margin:0px auto;
 }
-
-.main-foot h1{
-  font-size: 32px;
-  font-weight: 600;
-  color: white;
-}
-.main-foot i{
-  color: white;
-  
-}
-.main-foot .fab, .fas::before{
-  font-size: 26px;
-}
-.footer-link{
-  font-size: 15px;
-}
-.footer-link h4{
-  font-size: 15px;
-  color: #27AE60;
-}
-.footer-link a{
-  font-size: 15px;
-  color: white;
-  text-decoration: none;
+.card-landing {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.copyright h4{
-  font-size: 14px;
-  font-weight: 600;
-}
+/* Diagnosa */
+
 label{
   font-size: 20px;
   margin-left: 10px;
@@ -122,19 +198,163 @@ label{
 .main-deteksi{
   height: 70vh;
 }
-.card-landing {
-  height: 160px;
+
+/* Profile */
+
+.hero-profile{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 350px ;
+}
+.main-profile{
+  position: relative;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 65px);
+}
+.profile-update{
+  width: 100%;
+  margin-top: 120px;
   display: flex;
+  gap: 20px;
+}
+.card-left{
+  width: 350px;
+  height: 700px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 30px 0px;
+  gap: 15px;
 }
-.swal2-container .swal2-title{
-  font-size: 28px;
+.card-left img{
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  object-fit: contain;
 }
-.swal2-container .swal2-html-container{
-  font-size: 14px;
-  color: red;
+.card-left h1{
+  font-size: 20px;
+  font-weight: 700;
 }
+.card-left button{
+  width: 150px;
+  height: 50px;
+  color: white;
+  background-color: #1F4E3C;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.card-right{
+  width: 800px;
+  height: 700px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 15px;
+}
+.main-profile label{
+  margin-left: 0px;
+  margin: 20px 0px 10px 5px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.main-profile input{
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.main-profile textarea{
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.main-profile-update{
+  position: relative;
+  margin-top: 120px;
+  left: 0;
+  width: 100vw;
+}
+.card-update-profile{
+  width: 100%;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 40px 150px;
+}
+.card-update-profile h1{
+  font-size: 40px;
+  font-weight: 700;
+  color: #1F4E3C;
+  text-align: center;
+}
+.card-update-profile img{
+  position: relative;
+  left: 20px;
+  width: 152px;
+  height: 152px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+.form-delete-foto button{
+  width: 150px;
+  height: 50px;
+  color: white;
+  background-color: #E80000;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.form-update{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.form-update label{
+  margin-left: 0px;
+  margin: 20px 0px 10px 5px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.form-update input{
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.form-update textarea{
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.form-update button{
+  width: 150px;
+  height: 50px;
+  color: white;
+  background-color: #FA9B0D;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
 @media(min-width: 768px){
   .navbar{
     height: 80px;
