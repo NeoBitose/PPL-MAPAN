@@ -42,5 +42,7 @@ class IndexController extends Controller
                 "komentar" => $komentar
             ];
         }
+
+        return view('forum', $data);
     }
 }

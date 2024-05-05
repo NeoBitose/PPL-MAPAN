@@ -199,6 +199,92 @@ label{
   height: 70vh;
 }
 
+/* Forum */
+
+.list-postingan{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding: 30px 0px;
+}
+.card-postingan{
+  width: 980px;
+  padding: 40px;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.card-postingan h5{
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.card-postingan h6{
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0;
+}
+.card-postingan p {
+  font-size: 13px;
+  margin: 0;
+}
+.user-postingan{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.user-postingan img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.judul-postingan h5{
+  margin-bottom: 10px;
+}
+.gambar-postingan img{
+  width: 900px;
+  height: auto;
+}
+.komentar form{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+.komentar input{
+  border-top: 0px;
+  border-bottom: 1px solid black;
+  border-left: 0px;
+  border-right: 0px;
+  font-size: 12px;
+}
+.komentar input:focus {
+  outline: none;
+}
+.komentar form button{
+  width: 108px;
+  color: white;
+  background-color: #A4C763;
+  font-size: 11px;
+  font-weight: 400;
+  border: none;
+  border-radius: 3px;
+  margin-top: 20px;
+  padding: 7px 0px;
+}
+.detail-komentar{
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.detail-komentar .tgl-komentar{
+  font-size: 10px;
+  color: #757575;
+}
+
 /* Profile */
 
 .hero-profile{
@@ -362,7 +448,7 @@ label{
   .nav-link{
     margin-left: 20px;
   }
-  .hero-diagnosa{
+  .hero-page{
     margin-top: 80px ;
   }
 }
