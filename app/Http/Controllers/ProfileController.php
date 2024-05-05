@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -45,7 +46,7 @@ class ProfileController extends Controller
         if ($data->role == 'user') {
             return redirect()->back();
         }
-        return view('admin.updateuser');
+        return view('admin.updateuser', compact('data'));
     }
 
     public function edit_user(){
@@ -60,26 +61,43 @@ class ProfileController extends Controller
     }
 
     public function update_admin(Request $request, string $id){
-        $request->validate([
-            'name' => 'unique:users,name',
-            'email' => 'unique:users,email',
-            'password' => 'min:8',
-            'confirm_password' => 'same:password'
-        ]);
+        
+        if ($request->confirm_password != "" || $request->password != "") {
 
-        if ($request->password == "") {
-            DB::table('users')->where('id', $id)->update([
-                'name' => $request->name,
-                'email' => $request->email,
-            ]);
+            $data = DB::table('users')->where('id', $id)->first();
+
+            if ($data->name == $request->name) {
+                $request->validate([
+                    'password' => 'required|min:8',
+                    'confirm_password' => 'min:8'
+                ]);
+            } else {
+                $request->validate([
+                    'name' => 'unique:users,name',
+                    'password' => 'required|min:8',
+                    'confirm_password' => 'min:8'
+                ]);
+            }
+
+            if (Hash::check($request->password, $data->password)) {
+                DB::table('users')->where('id', $id)->update([
+                    'name' => $request->name,
+                    'password' => Hash::make($request->confirm_password)
+                ]);
+            } else {
+                return redirect()->back()->withErrors(['password'=>'password lama anda salah']);
+            }
+            
         } else {
+            $request->validate([
+                'name' => 'unique:users,name',
+            ]);
             DB::table('users')->where('id', $id)->update([
                 'name' => $request->name,
-                'email' => $request->email,
-                'password' => $request->password
             ]);
         }
         
+        return redirect('/dashboard');
     }
 
     public function update_user(Request $request, string $id){

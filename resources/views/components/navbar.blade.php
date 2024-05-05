@@ -42,6 +42,7 @@
     </div>
   </div>
 </nav>
+@auth
 <div class="content-profile">
   <div class="container detail-content-profile">
     <div class="box-profile">
@@ -54,7 +55,7 @@
             <p>Profile</p>
           </a>      
         @else
-          <a href="/edit-admin/{{auth()->user()->id}}">
+          <a href="/dashboard">
             <p>Profile</p>
           </a>      
         @endif
@@ -67,11 +68,13 @@
             fill="black" />
           <path d="M16.09 15.59L17.5 17L22.5 12L17.5 7L16.09 8.41L18.67 11H9V13H18.67L16.09 15.59Z" fill="black" />
         </svg>
-        <form method="POST" action="{{ route('logout') }}">
+        <form method="POST" action="{{ route('logout') }}" id="form-logout">
             @csrf
-            <button class="border-0 p-0">Logout</button>
+            <button class="border-0 p-0" class="logout">Logout</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+@endauth
+

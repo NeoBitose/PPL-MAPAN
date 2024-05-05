@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LoginRequest extends FormRequest
 {
@@ -44,6 +45,7 @@ class LoginRequest extends FormRequest
         if (! Auth::attempt($this->only('name', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
+            alert()->error('Akun tidak ditemukan!','');
             throw ValidationException::withMessages([
                 'name' => trans('auth.failed'),
             ]);

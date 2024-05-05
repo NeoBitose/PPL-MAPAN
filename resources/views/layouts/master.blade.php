@@ -23,11 +23,32 @@
   <script>
     
     $(document).ready(function(){
-    $(".box-profile").hide();
+      $(".box-profile").hide();
       $(".profile").click(function(){
         $(".box-profile").toggle();
       });
     });
+
+    const form_logout = $('#form-logout');
+    $('.logout').click(function(e) {
+      e.preventDefault();
+        console.log("ok")
+        Swal.fire({
+          title: 'Apakah anda yakin untuk keluar?',
+          text: '',
+          icon: 'question',
+          showConfirmButton: true,
+          showCancelButton: true,
+          confirmButtonText: 'Yakin',
+          cancelButtonText: 'Batal'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("ok")
+            form_logout.submit();
+          }
+        })
+    });
+
 
     const form = $('#form-deteksi');
     $('.confirm').click(function(e) {

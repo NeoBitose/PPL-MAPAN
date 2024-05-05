@@ -204,7 +204,7 @@ label{
 .list-postingan{
   display: flex;
   flex-direction: column;
-  gap: 3  0px;
+  gap: 40px;
   align-items: center;
   padding: 30px 0px;
 }

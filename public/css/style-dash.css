@@ -14,7 +14,7 @@
   flex-direction: column;
 }
 .form-update label{
-  margin: 20px 0px 20px 5px;
+  margin: 50px 0px 20px 5px;
   font-size: 16px;
   font-weight: 700;
 }
@@ -23,7 +23,7 @@
   font-size: 16px;
   border: 1px solid black;
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 .form-update textarea{
   padding: 10px;
