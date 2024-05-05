@@ -204,7 +204,7 @@ label{
 .list-postingan{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 3  0px;
   align-items: center;
   padding: 30px 0px;
 }
@@ -216,6 +216,7 @@ label{
   display: flex;
   flex-direction: column;
   gap: 25px;
+  border-radius: 10px;
 }
 .card-postingan h5{
   font-size: 15px;

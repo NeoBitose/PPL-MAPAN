@@ -6,9 +6,9 @@
       <form action="#">
         <div class="profile-update">
           <div class="card-left">
-            <img src="{{ asset('img/pp.png') }}" alt="">
+            <img src="{{ asset('img/profile/'.auth()->user()->foto_profile) }}" alt="">
             <h1>{{ auth()->user()->name }}</h1>
-            <a href="/profile">
+            <a href="/edit-user/">
               <button type="button" class="">Edit Akun</button>
             </a>
           </div>
@@ -16,11 +16,11 @@
             <label for="">Email:</label>
             <input type="email" name="" id="" value="{{auth()->user()->email}}">
             <label for="">Nomor Telepon:</label>
-            <input type="text" value="{{}}">
+            <input type="text" value="{{auth()->user()->no_telepon}}">
             <label for="">Deskripsi Diri:</label>
-            <textarea name="" id="" cols="30" rows="5"></textarea>
+            <textarea name="" id="" cols="30" rows="5">{{auth()->user()->deskripsi_diri}}</textarea>
             <label for="">Alamat</label>
-            <textarea name="" id="" cols="30" rows="5"></textarea>
+            <textarea name="" id="" cols="30" rows="5">{{auth()->user()->alamat}}</textarea>
           </div>
         </div>
       </form>

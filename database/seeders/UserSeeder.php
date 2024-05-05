@@ -18,6 +18,11 @@ class UserSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('admin123'),
+            'deskripsi_diri' => "",
+            'no_telepon' => "",
+            'foto_profile' => "pp.png",
+            'alamat' => "",
+            'role' => "admin"
         ]);
     }
 }

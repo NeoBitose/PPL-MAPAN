@@ -45,7 +45,7 @@ class ProfileController extends Controller
         if ($data->role == 'user') {
             return redirect()->back();
         }
-        dd($data);
+        return view('admin.updateuser');
     }
 
     public function edit_user(){
@@ -57,7 +57,6 @@ class ProfileController extends Controller
         if ($data->role == 'admin') {
             return redirect()->back();
         }
-        dd($data);
     }
 
     public function update_admin(Request $request, string $id){
