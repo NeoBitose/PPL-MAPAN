@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Illuminate\Support\Str;
 
 class ProfileController extends Controller
 {
@@ -58,6 +59,7 @@ class ProfileController extends Controller
         if ($data->role == 'admin') {
             return redirect()->back();
         }
+        return view('updateuser', compact('data'));
     }
 
     public function update_admin(Request $request, string $id){
@@ -86,12 +88,15 @@ class ProfileController extends Controller
                 ]);
             } else {
                 return redirect()->back()->withErrors(['password'=>'password lama anda salah']);
+            } 
+        } 
+        else {
+            $data = DB::table('users')->where('id', $id)->first();
+            if ($data->name != $request->name) {
+                $request->validate([
+                    'name' => 'unique:users,name',
+                ]);
             }
-            
-        } else {
-            $request->validate([
-                'name' => 'unique:users,name',
-            ]);
             DB::table('users')->where('id', $id)->update([
                 'name' => $request->name,
             ]);
@@ -100,26 +105,131 @@ class ProfileController extends Controller
         return redirect('/dashboard');
     }
 
-    public function update_user(Request $request, string $id){
-        $request->validate([
-            'name' => 'unique:users,name',
-            'email' => 'unique:users,email',
-            'password' => 'min:8',
-            'confirm_password' => 'same:password'
-        ]);
+    public function update_user(Request $request, string $id)
+    {
 
-        if ($request->password == "") {
-            DB::table('users')->where('id', $id)->update([
-                'name' => $request->name,
-                'email' => $request->email,
+        $data = DB::table('users')->where('id', $id)->first();
+
+        if ($data->name != $request->name) {
+            $request->validate([
+                'name' => 'unique:users,name',
             ]);
-        } else {
-            DB::table('users')->where('id', $id)->update([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => $request->password
-            ]);
+            $data->name = $request->name;
         }
+        if ($data->email != $request->email) {
+            $request->validate([
+                'email' => 'unique:users,email',
+            ]);
+            $data->email = $request->email;
+        }
+        if ($request->confirm_password != "" || $request->password != "") {
+            $request->validate([
+                'password' => 'required|min:8',
+                'confirm_password' => 'min:8'
+            ]);
+            if (Hash::check($request->password, $data->password)) {
+                $data->password = $request->password;
+            } else {
+                return redirect()->back()->withErrors(['password'=>'password lama anda salah']);
+            }
+        }
+        if ($request->foto != "") {
+            request()->validate([
+                'gambar' => 'mimes:jpg,jpeg,png'
+            ]);
+            if ($data->foto_profile != "") {
+                unlink(public_path('/img/profile/'.$data->foto_profile));
+            }
+            $file = $request->file('foto');
+            $nama_file = Str::random(20) . '.' . $file->extension();
+            $file->move('img/profile', $nama_file);
+            $data->foto_profile = $nama_file;
+        }
+
+        DB::table('users')->where('id', $id)->update([
+            'name' => $data->name,
+            'email' => $data->email,
+            'password' => $data->password,
+            'deskripsi_diri' => $request->deskripsi,
+            'no_telepon' => $request->no_telepon,
+            'foto_profile' => $data->foto_profile,
+            'alamat' => $request->alamat,
+        ]);
+        
+        return redirect('/view-profile');
+
+        // if ($request->confirm_password != "" || $request->password != "") {
+        //     $data = DB::table('users')->where('id', $id)->first();
+        //     if ($data->name == $request->name) {
+        //         $request->validate([
+        //             'password' => 'required|min:8',
+        //             'confirm_password' => 'min:8'
+        //         ]);
+        //     } else {
+        //         $request->validate([
+        //             'name' => 'unique:users,name',
+        //             'password' => 'required|min:8',
+        //             'confirm_password' => 'min:8'
+        //         ]);
+        //     }
+
+        //     if (Hash::check($request->password, $data->password)) {
+        //         DB::table('users')->where('id', $id)->update([
+        //             'name' => $request->name,
+        //             'password' => Hash::make($request->confirm_password)
+        //         ]);
+        //         if ($request->gambar == "") {
+        //             DB::table('users')->where('id', $id)->update([
+        //                 'name' => $request->name,
+        //                 'email' => $request->email,
+        //                 'password' => Hash::make($request->confirm_password),
+        //                 'deskripsi_diri' => $request->deskripsi,
+        //                 'no_telepon' => $request->no_telepon,
+        //                 'alamat' => $request->alamat,
+        //             ]);
+        //         } else {
+
+        //             DB::table('users')->where('id', $id)->update([
+        //                 'name' => $request->name,
+        //                 'email' => $request->email,
+        //                 'password' => Hash::make($request->confirm_password),
+        //                 'deskripsi_diri' => $request->deskripsi,
+        //                 'no_telepon' => $request->no_telepon,
+        //                 'alamat' => $request->alamat,
+        //             ]);
+        //         }
+        //     } else {
+        //         return redirect()->back()->withErrors(['password'=>'password lama anda salah']);
+        //     }
+        // }
+        // else {
+        //     $data = DB::table('users')->where('id', $id)->first();
+        //     if ($data->name != $request->name) {
+        //         $request->validate([
+        //             'name' => 'unique:users,name',
+        //         ]);
+        //     }
+        // }
+        
+        // $request->validate([
+        //     'name' => 'unique:users,name',
+        //     'email' => 'unique:users,email',
+        //     'password' => 'min:8',
+        //     'confirm_password' => 'same:password'
+        // ]);
+
+        // if ($request->password == "") {
+        //     DB::table('users')->where('id', $id)->update([
+        //         'name' => $request->name,
+        //         'email' => $request->email,
+        //     ]);
+        // } else {
+        //     DB::table('users')->where('id', $id)->update([
+        //         'name' => $request->name,
+        //         'email' => $request->email,
+        //         'password' => $request->password
+        //     ]);
+        // }
         
     }
 

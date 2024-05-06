@@ -38,6 +38,8 @@ class PostinganController extends Controller
                 "komentar" => $komentar
             ];
         }
+
+        return view('postingan.index');
     }
 
     /**
@@ -45,7 +47,7 @@ class PostinganController extends Controller
      */
     public function create()
     {
-        //
+        return view('postingan.tambah');
     }
 
     /**

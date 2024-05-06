@@ -27,6 +27,11 @@
       $(".profile").click(function(){
         $(".box-profile").toggle();
       });
+
+      $(".box-postingan").hide();
+      $("#bars-postingan").click(function(){
+        $(".box-postingan").toggle();
+      });
     });
 
     const form_logout = $('#form-logout');

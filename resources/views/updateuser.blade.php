@@ -11,25 +11,26 @@
             <button>Hapus</button>
           </form>
         </div>
-        <form action="/update-user" class="form-update">
+        <form action="/update-user/{{auth()->user()->id}}" method="post" class="form-data" enctype="multipart/form-data">
+          @csrf
           <label for="">File Foto (Kosongi jika tidak ingin mengubah):</label>
-          <input type="text" value="">
+          <input type="file" value="" name="foto">
           <label for="">Nama:</label>
-          <input type="text" value="{{auth()->user()->name}}">
+          <input type="text" name="name" value="{{auth()->user()->name}}">
           <label for="">Email:</label>
-          <input type="email" name="" id="" value="{{auth()->user()->email}}">
+          <input type="email" name="email" id="" value="{{auth()->user()->email}}">
           <label for="">Password saat ini:</label>
-          <input type="password" value="">
+          <input type="password" name="password" value="">
           <label for="">Password Baru:</label>
-          <input type="password" value="">
+          <input type="password" name="confirm_password" value="">
           <label for="">Nomor Telepon:</label>
-          <input type="text" value="{{auth()->user()->no_telepon}}">
+          <input type="text" name="no_telepon" value="{{auth()->user()->no_telepon}}">
           <label for="">Deskripsi Diri:</label>
-          <textarea name="" id="" cols="30" rows="5">{{auth()->user()->deskripsi_diri}}</textarea>
+          <textarea name="deskripsi" id="" cols="30" rows="5">{{auth()->user()->deskripsi_diri}}</textarea>
           <label for="">Alamat</label>
-          <textarea name="" id="" cols="30" rows="5">{{auth()->user()->alamat}}</textarea>
+          <textarea name="alamat" id="" cols="30" rows="5">{{auth()->user()->alamat}}</textarea>
           <div class="d-flex justify-content-end">
-            <button type="submit" class="">Simpan Data</button>
+            <button type="submit" class="bg-primary">Simpan Data</button>
           </div>
         </form>
       </div>

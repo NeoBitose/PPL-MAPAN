@@ -112,6 +112,40 @@ body{
   color: red;
 }
 
+.form-data{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.form-data label{
+  margin-left: 0px;
+  margin: 20px 0px 10px 5px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.form-data input{
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.form-data textarea{
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.form-data button{
+  width: 150px;
+  height: 50px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
 /* Index */
 
 .hero{
@@ -201,6 +235,21 @@ label{
 
 /* Forum */
 
+.btn-postingan{
+  width: 980px;
+  display: flex;
+  gap: 40px;
+}
+.btn-postingan button{
+  width: 220px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 7px;
+  margin-top: 20px;
+  padding: 10px 0px;
+}
 .list-postingan{
   display: flex;
   flex-direction: column;
@@ -285,6 +334,57 @@ label{
   font-size: 10px;
   color: #757575;
 }
+.accordion{
+  cursor: pointer;
+  transition: 0.4s;
+}
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+.content-postingan{
+  /* position: relative; */
+  bottom: 30px; 
+  display: flex;
+  justify-content: end;
+}
+.detail-content-postingan{
+  position:absolute;
+  display: flex;
+  justify-content: end;
+}
+.box-postingan{
+  background-color: white;
+  width: 180px;
+  padding: 15px 15px 0px 15px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.box-postingan a {
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+.box-postingan p {
+  margin: 0;
+}
+.tambah-postingan h1{
+  font-size: 40px;
+  font-weight: 700;
+  color: #1F4E3C;
+  text-align: center;
+  padding: 50px 0px;
+}
+.form-tambah-post button{
+  background-color: #53B28E;
+  width: 230px;
+  height: 64px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  color: white;
+}
 
 /* Profile */
 
@@ -301,7 +401,7 @@ label{
   width: 100vw;
   height: calc(100vh - 65px);
 }
-.profile-update{
+.profile-data{
   width: 100%;
   margin-top: 120px;
   display: flex;
@@ -407,40 +507,7 @@ label{
   border-radius: 10px;
   margin-top: 20px;
 }
-.form-update{
-  display: flex;
-  flex-direction: column;
-  margin-top: 30px;
-}
-.form-update label{
-  margin-left: 0px;
-  margin: 20px 0px 10px 5px;
-  font-size: 16px;
-  font-weight: 700;
-}
-.form-update input{
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid black;
-  border-radius: 10px;
-}
-.form-update textarea{
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid black;
-  border-radius: 10px;
-}
-.form-update button{
-  width: 150px;
-  height: 50px;
-  color: white;
-  background-color: #FA9B0D;
-  font-size: 16px;
-  font-weight: 700;
-  border: none;
-  border-radius: 10px;
-  margin-top: 20px;
-}
+
 
 @media(min-width: 768px){
   .navbar{

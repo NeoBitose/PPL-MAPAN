@@ -3,8 +3,8 @@
   <div class="hero-profile bg-primary"></div>
   <div class="main-profile">
     <div class="container">
-      <form action="#">
-        <div class="profile-update">
+      <form action="#" class="form-data">
+        <div class="profile-data">
           <div class="card-left">
             <img src="{{ asset('img/profile/'.auth()->user()->foto_profile) }}" alt="">
             <h1>{{ auth()->user()->name }}</h1>
@@ -14,13 +14,13 @@
           </div>
           <div class="card-right">
             <label for="">Email:</label>
-            <input type="email" name="" id="" value="{{auth()->user()->email}}">
+            <input type="email" name="" id="" value="{{auth()->user()->email}}" disabled>
             <label for="">Nomor Telepon:</label>
-            <input type="text" value="{{auth()->user()->no_telepon}}">
+            <input type="text" value="{{auth()->user()->no_telepon}}" disabled>
             <label for="">Deskripsi Diri:</label>
-            <textarea name="" id="" cols="30" rows="5">{{auth()->user()->deskripsi_diri}}</textarea>
+            <textarea name="" id="" cols="30" rows="5" disabled>{{auth()->user()->deskripsi_diri}}</textarea>
             <label for="">Alamat</label>
-            <textarea name="" id="" cols="30" rows="5">{{auth()->user()->alamat}}</textarea>
+            <textarea name="" id="" cols="30" rows="5" disabled>{{auth()->user()->alamat}}</textarea>
           </div>
         </div>
       </form>

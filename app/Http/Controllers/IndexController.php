@@ -17,10 +17,10 @@ class IndexController extends Controller
     }
 
     public function forum()
-    {
+    {   
         $postingan = DB::table('postingan')
                         ->join('users', 'postingan.users_id', "=", "users.id")
-                        ->select('id_postingan', 'judul_postingan', "deskripsi", "tgl_upload", "gambar_postingan", "name", "email")
+                        ->select('id', 'id_postingan', 'judul_postingan', "deskripsi", "tgl_upload", "gambar_postingan", "name", "email", "foto_profile")
                         ->get();
         $data = [];
 
@@ -39,10 +39,11 @@ class IndexController extends Controller
                 "gambar_postingan" => $postingan[$i]->gambar_postingan ,
                 "name" => $postingan[$i]->name ,
                 "email" => $postingan[$i]->email ,
+                "foto_profile" => $postingan->foto_profile,
                 "komentar" => $komentar
             ];
         }
 
-        return view('forum', $data);
+        return view('forum', compact('data'));
     }
 }
