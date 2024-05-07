@@ -73,10 +73,12 @@
                 {{ count($item['komentar']) }} Komentar
               </h6>
               <div class="panel">
+                @auth
                 <form action="" class="mt-3" id="add-komentar">
                   <input type="text" name="komentar" placeholder="Ketik komentar anda ...">
                   <button class="btn-comment">Kirim Komentar</button>
                 </form>
+                @endauth
                 <div class="list-komentar mt-4" id="list-komentar">
                   @for ($i = 0; $i < count($item['komentar']); $i++)
                     <div class="detail-komentar">

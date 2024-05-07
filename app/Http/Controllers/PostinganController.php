@@ -18,6 +18,7 @@ class PostinganController extends Controller
                         ->join('users', 'postingan.users_id', "=", "users.id")
                         ->select('id_postingan', 'judul_postingan', "deskripsi", "tgl_upload", "gambar_postingan", "name", "email", "foto_profile")
                         ->where('users_id', auth()->user()->id)
+                        ->where('active_nonactive', 1)
                         ->orderBy('id_postingan', 'desc')
                         ->get();
         $data = [];
@@ -161,5 +162,15 @@ class PostinganController extends Controller
         DB::table('postingan')->where('id_postingan', $id)->delete();
 
         return redirect('/postingan');
+    }
+
+    public function nonaktif_postingan(string $id){
+        if (auth()->user()->role == 'user') {
+            return redirect()->back();
+        }
+        DB::table('postingan')->where('id_postingan', $id)->update([
+            'active_nonactive' => '0'
+        ]);
+        return redirect()->back();
     }
 }

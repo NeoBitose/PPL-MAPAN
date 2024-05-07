@@ -44,8 +44,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/update-user/{id}', [ProfileController::class, 'update_user']);
 
     Route::get('/dash-post', [DashboardController::class, 'dashboard_postingan']);
-    Route::get('/nonaktif-postingan/{id}', [DashboardController::class, 'nonaktif_postingan']);
-
+    Route::get('/nonaktif-postingan/{id}', [PostinganController::class, 'nonaktif_postingan']);
     Route::resource('/postingan', PostinganController::class);
     Route::resource('/komentar', KomentarController::class);
 

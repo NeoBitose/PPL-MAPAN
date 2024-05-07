@@ -14,12 +14,5 @@ class DashboardController extends Controller
         $data = DB::table('postingan')->get();
     }
 
-    public function nonaktif_postingan(string $id){
-        if (auth()->user()->role == 'user') {
-            return redirect()->back();
-        }
-        DB::table('postingan')->where('id', $id)->update([
-            'active_nonactive' => 'nonactive'
-        ]);
-    }
+    
 }

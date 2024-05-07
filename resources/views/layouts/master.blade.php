@@ -93,6 +93,25 @@
         })
     });
 
+    const form_nonaktif = $('#form-nonaktif');
+    $('.nonaktif-confirm').click(function(e) {
+      e.preventDefault();
+        console.log("ok")
+        Swal.fire({
+          title: 'Apakah anda yakin untuk menonaktifkan postingan ini?',
+          text: '',
+          icon: 'question',
+          showConfirmButton: true,
+          showCancelButton: true,
+          confirmButtonText: 'Yakin',
+          cancelButtonText: 'Batal'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("ok")
+            form_nonaktif.submit();
+          }
+        })
+    });
 
     const form = $('#form-deteksi');
     $('.confirm').click(function(e) {

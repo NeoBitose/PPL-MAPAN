@@ -9,6 +9,7 @@ body{
 .flex{
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 .navbar-brand{
   display: flex;
@@ -146,6 +147,12 @@ body{
   margin-top: 20px;
 }
 .delete-confirm{
+  background-color: transparent;
+  border: none;
+  padding: 0px 0px 15px 0px;
+}
+.nonaktif-confirm{
+  width: 180px;
   background-color: transparent;
   border: none;
   padding: 0px;
@@ -361,6 +368,13 @@ label{
   display: flex;
   justify-content: end;
 }
+.nonaktif-postingan{
+  background-color: white;
+  width: 250px;
+  padding: 15px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
 .box-postingan{
   background-color: white;
   width: 180px;
@@ -368,9 +382,10 @@ label{
   border: 1px solid lightgray;
   border-radius: 10px;
 }
-.box-postingan a {
+.box-postingan a, .nonaktif-postingan a{
   text-decoration: none;
   margin-bottom: 15px;
+  font-weight: 600;
 }
 .box-postingan p {
   margin: 0;

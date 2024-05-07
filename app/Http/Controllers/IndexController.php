@@ -21,6 +21,7 @@ class IndexController extends Controller
         $postingan = DB::table('postingan')
                         ->join('users', 'postingan.users_id', "=", "users.id")
                         ->select('id', 'id_postingan', 'judul_postingan', "deskripsi", "tgl_upload", "gambar_postingan", "name", "email", "foto_profile")
+                        ->where('active_nonactive', 1)
                         ->orderBy('id_postingan', 'desc')
                         ->get();
         $data = [];
