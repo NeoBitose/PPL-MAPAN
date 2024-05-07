@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class PostinganController extends Controller
 {
@@ -15,8 +16,9 @@ class PostinganController extends Controller
     {
         $postingan = DB::table('postingan')
                         ->join('users', 'postingan.users_id', "=", "users.id")
-                        ->select('id_postingan', 'judul_postingan', "deskripsi", "tgl_upload", "gambar_postingan", "name", "email")
+                        ->select('id_postingan', 'judul_postingan', "deskripsi", "tgl_upload", "gambar_postingan", "name", "email", "foto_profile")
                         ->where('users_id', auth()->user()->id)
+                        ->orderBy('id_postingan', 'desc')
                         ->get();
         $data = [];
 
@@ -24,22 +26,23 @@ class PostinganController extends Controller
             $komentar = DB::table('komentar')
                             ->join('postingan', 'komentar.postingan_id', '=', 'postingan.id_postingan')
                             ->join('users', 'komentar.users_id', '=', 'users.id')
-                            ->where('postingan_id', $postingan[$i])
+                            ->where('postingan_id', $postingan[$i]->id_postingan)
                             ->select('tgl_komentar', 'komentar', 'name', 'email')
                             ->get();
-            $data = [
+            $data[$i] = [
                 "id_postingan" => $postingan[$i]->id_postingan ,
                 "judul" => $postingan[$i]->judul_postingan ,
                 "deskripsi" => $postingan[$i]->deskripsi ,
                 "tgl_upload" => $postingan[$i]->tgl_upload ,
                 "gambar_postingan" => $postingan[$i]->gambar_postingan ,
                 "name" => $postingan[$i]->name ,
-                "email" => $postingan[$i]->email ,
+                "email" => $postingan[$i]->email,
+                "foto_profile" => $postingan[$i]->foto_profile,
                 "komentar" => $komentar
             ];
         }
 
-        return view('postingan.index');
+        return view('postingan.index', compact('data'));
     }
 
     /**
@@ -57,9 +60,9 @@ class PostinganController extends Controller
     {
         if ($request->gambar == "") {
             DB::table('postingan')->insert([
-                "judul_" => $request->judul,
+                "judul_postingan" => $request->judul,
                 "deskripsi" => $request->deskripsi,
-                "tgl_upload" => $request->tgl_upload,
+                "tgl_upload" => date('Y-m-d'),
                 "users_id" => auth()->user()->id,
             ]);
         } else {
@@ -68,19 +71,18 @@ class PostinganController extends Controller
             ]);
 
             $file = $request->file('gambar');
-            $nama_file = Hash::make(Request()->nama.time()) . '.' . $file->extension();
+            $nama_file = Str::random(20) . '.' . $file->extension();
             $file->move('img/postingan', $nama_file);
 
             DB::table('postingan')->insert([
-                "judul_" => $request->judul,
+                "judul_postingan" => $request->judul,
                 "deskripsi" => $request->deskripsi,
-                "tgl_upload" => $request->tgl_upload,
+                "tgl_upload" => date('Y-m-d'),
                 "gambar_postingan" => $nama_file,
                 "users_id" => auth()->user()->id,
             ]);
-
         }
-        
+        return redirect('/postingan');
     }
 
     /**
@@ -101,6 +103,7 @@ class PostinganController extends Controller
                     ->select('id_postingan', 'judul_postingan', "deskripsi", "tgl_upload", "gambar_postingan", "name", "email")
                     ->where('id_postingan', $id)
                     ->first();
+        return view('postingan.edit', compact('data'));
     }
 
     /**
@@ -110,10 +113,8 @@ class PostinganController extends Controller
     {   
         if ($request->gambar == "") {
             DB::table('postingan')->where('id_postingan', $id)->update([
-                "judul_" => $request->judul,
+                "judul_postingan" => $request->judul,
                 "deskripsi" => $request->deskripsi,
-                "tgl_upload" => $request->tgl_upload,
-                "users_id" => auth()->user()->id,
             ]);
         } 
         else {
@@ -126,22 +127,22 @@ class PostinganController extends Controller
                     ->select("gambar_postingan")
                     ->where('id_postingan', $id)
                     ->first();
+
             if ($data->gambar_postingan != "") {
                 unlink(public_path('/img/postingan/') . $data->gambar_postingan);
             }
 
             $file = $request->file('gambar');
-            $nama_file = Hash::make(Request()->nama.time()) . '.' . $file->extension();
+            $nama_file = Str::random(20) . '.' . $file->extension();
             $file->move('img/postingan', $nama_file);
 
             DB::table('postingan')->where('id_postingan', $id)->update([
-                "judul_" => $request->judul,
+                "judul_postingan" => $request->judul,
                 "deskripsi" => $request->deskripsi,
-                "tgl_upload" => $request->tgl_upload,
                 "gambar_postingan" => $nama_file,
-                "users_id" => auth()->user()->id,
             ]);
         }
+        return redirect('/postingan');
     }
 
     /**
@@ -158,5 +159,7 @@ class PostinganController extends Controller
             unlink(public_path('/img/postingan/') . $data->gambar_postingan);
         }
         DB::table('postingan')->where('id_postingan', $id)->delete();
+
+        return redirect('/postingan');
     }
 }

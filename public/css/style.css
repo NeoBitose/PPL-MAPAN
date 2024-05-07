@@ -145,6 +145,11 @@ body{
   border-radius: 10px;
   margin-top: 20px;
 }
+.delete-confirm{
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+}
 
 /* Index */
 
@@ -347,8 +352,9 @@ label{
 .content-postingan{
   /* position: relative; */
   bottom: 30px; 
-  display: flex;
+  display: none;
   justify-content: end;
+  /* display: none; */
 }
 .detail-content-postingan{
   position:absolute;

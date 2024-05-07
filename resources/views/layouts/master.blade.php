@@ -28,11 +28,30 @@
         $(".box-profile").toggle();
       });
 
-      $(".box-postingan").hide();
-      $("#bars-postingan").click(function(){
-        $(".box-postingan").toggle();
-      });
+      // $(".box-postingan").hide();
+      // $("#bars-postingan").click(function(){
+      //   $(".box-postingan").toggle();
+      // });
     });
+
+    var bars_post = document.getElementsByClassName("bars-postingan");
+    console.log(bars_post);
+    var j;
+      for (j = 0; j < bars_post.length; j++) {
+        bars_post[j].addEventListener("click", function() {
+          /* Toggle between adding and removing the "active" class,
+          to highlight the button that controls the panel */
+          this.classList.toggle("active-box");
+
+          /* Toggle between hiding and showing the active panel */
+          var box_postingan = this.nextElementSibling;
+          if (box_postingan.style.display === "flex") {
+            box_postingan.style.display = "none";
+          } else {
+            box_postingan.style.display = "flex";
+          }
+        });
+      }
 
     const form_logout = $('#form-logout');
     $('.logout').click(function(e) {
@@ -50,6 +69,26 @@
           if (result.isConfirmed) {
             console.log("ok")
             form_logout.submit();
+          }
+        })
+    });
+
+    const form_delete = $('#form-delete');
+    $('.delete-confirm').click(function(e) {
+      e.preventDefault();
+        console.log("ok")
+        Swal.fire({
+          title: 'Apakah anda yakin untuk menghapus postingan ini?',
+          text: '',
+          icon: 'question',
+          showConfirmButton: true,
+          showCancelButton: true,
+          confirmButtonText: 'Yakin',
+          cancelButtonText: 'Batal'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("ok")
+            form_delete.submit();
           }
         })
     });
