@@ -31,8 +31,10 @@ class KomentarController extends Controller
         DB::table('komentar')->insert([
             "komentar" => $request->komentar,
             "users_id" => auth()->user()->id,
-            "tgl_komentar" => date("Y-m-d")
+            "tgl_komentar" => date("Y-m-d"),
+            "postingan_id" => $request->id_postingan
         ]);
+        return redirect('/forum#'.$request->id_postingan);
     }
 
     /**
@@ -59,6 +61,7 @@ class KomentarController extends Controller
         DB::table('komentar')->where('id_komentar', $id)->update([
             "komentar" => $request->komentar,
         ]);
+        return redirect('/forum');
     }
 
     /**
@@ -67,5 +70,6 @@ class KomentarController extends Controller
     public function destroy(string $id)
     {
         DB::table('komentar')->where('id_komentar', $id)->delete();
+        return redirect('/forum');
     }
 }

@@ -31,7 +31,7 @@ class IndexController extends Controller
                             ->join('postingan', 'komentar.postingan_id', '=', 'postingan.id_postingan')
                             ->join('users', 'komentar.users_id', '=', 'users.id')
                             ->where('postingan_id', $postingan[$i]->id_postingan)
-                            ->select('tgl_komentar', 'komentar', 'name', 'email')
+                            ->select('id_komentar', 'tgl_komentar', 'komentar', 'name', 'email', 'komentar.users_id')
                             ->get();
             $data[$i] = [
                 "id_postingan" => $postingan[$i]->id_postingan ,

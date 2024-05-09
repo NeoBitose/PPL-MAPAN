@@ -149,10 +149,15 @@ body{
 .delete-confirm{
   background-color: transparent;
   border: none;
-  padding: 0px 0px 15px 0px;
+  padding: 0px 0px 0px 0px;
 }
 .nonaktif-confirm{
   width: 180px;
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+}
+.delete-komentar-confirm{
   background-color: transparent;
   border: none;
   padding: 0px;
@@ -325,7 +330,7 @@ label{
 .komentar input:focus {
   outline: none;
 }
-.komentar form button{
+.komentar form .btn-comment{
   width: 108px;
   color: white;
   background-color: #A4C763;
@@ -368,17 +373,10 @@ label{
   display: flex;
   justify-content: end;
 }
-.nonaktif-postingan{
-  background-color: white;
-  width: 250px;
-  padding: 15px;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-}
 .box-postingan{
   background-color: white;
   width: 180px;
-  padding: 15px 15px 0px 15px;
+  padding: 15px;
   border: 1px solid lightgray;
   border-radius: 10px;
 }
@@ -389,6 +387,13 @@ label{
 }
 .box-postingan p {
   margin: 0;
+}
+.nonaktif-postingan{
+  background-color: white;
+  width: 250px;
+  padding: 15px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
 }
 .tambah-postingan h1{
   font-size: 40px;
@@ -405,6 +410,37 @@ label{
   border-radius: 5px;
   font-size: 20px;
   color: white;
+}
+
+.content-komentar{
+  /* position: relative; */
+  bottom: 30px; 
+  display: none;
+  justify-content: end;
+  /* display: none; */
+}
+.detail-content-komentar{
+  position:absolute;
+  display: flex;
+  justify-content: end;
+}
+.box-komentar{
+  background-color: white;
+  width: 200px;
+  padding: 15px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.box-komentar a{
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-weight: 600;
+  display: flex;
+  gap: 15px;
+}
+.box-komentar img{
+  width: 18px;
+  height: 18px;
 }
 
 /* Profile */

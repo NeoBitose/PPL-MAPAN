@@ -23,6 +23,7 @@ Route::get('/', [IndexController::class, 'index']);
 Route::resource('/diagnosa', DiagnosaController::class);
 Route::post('/hasil-diagnosa', [DiagnosaController::class, 'diagnosa']);
 Route::get('/forum', [IndexController::class, 'forum']);
+Route::get('/komentar', [PostinganController::class, 'komentar']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
