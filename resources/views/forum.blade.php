@@ -7,18 +7,31 @@
   </div>
   <div class="container">
     <div class="list-postingan">
-      @auth
-        @if (auth()->user()->role == 'user')
-          <div class="btn-postingan">
-            <a href="/postingan/create">
-              <button class="bg-primary">Tambah Postingan</button>
-            </a>
-            <a href="/postingan">
-              <button class="bg-warning">Postingan Saya</button>
-            </a>
-          </div>
-        @endif
-      @endauth
+      <div class="header-forum">
+        <div class="btn-postingan">
+        @auth
+          @if (auth()->user()->role == 'user')
+            
+              <a href="/postingan/create">
+                <button class="bg-primary">Tambah Postingan</button>
+              </a>
+              <a href="/postingan">
+                <button class="bg-warning">Postingan Saya</button>
+              </a>
+            
+          @endif
+        @endauth
+        </div>
+        <div class="search-form">
+          <form action="/search" method="post">
+            @csrf
+            <input type="search" name="cari" id="" placeholder="Cari disini lalu enter">
+            {{-- <button type="submit" class="btn-search bg-success">Cari</button> --}}
+          </form>
+          
+        </div>
+      </div>
+      
 
       @foreach ($data as $item)
         <div class="card-postingan" id="{{ $item['id_postingan'] }}">

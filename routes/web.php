@@ -25,6 +25,7 @@ Route::get('/', [IndexController::class, 'index']);
 Route::resource('/diagnosa', DiagnosaController::class);
 Route::post('/hasil-diagnosa', [DiagnosaController::class, 'diagnosa']);
 Route::get('/forum', [IndexController::class, 'forum']);
+Route::post('/search', [IndexController::class, 'search']);
 Route::get('/komentar', [PostinganController::class, 'komentar']);
 
 Route::get('/dashboard', function () {
@@ -51,8 +52,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('/postingan', PostinganController::class);
     Route::resource('/komentar', KomentarController::class);
 
-    Route::resource('/penyakit', [PenyakitController::class]);
-    Route::resource('/gajala-penyakit', [GejalaPenyakitController::class]);
+    Route::resource('/penyakit', PenyakitController::class);
+    Route::resource('/gajala-penyakit', GejalaPenyakitController::class);
 
 });
 

@@ -252,8 +252,32 @@ label{
 
 /* Forum */
 
-.btn-postingan{
+.header-forum{
   width: 980px;
+  display: flex;
+  justify-content: space-between;
+}
+.search-form{
+  width: 480px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: end;
+}
+.search-form input{
+  font-size: 16px;
+  padding: 8px 10px;
+  margin: 0px;
+}
+.search-form button{
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 20px;
+}
+.btn-postingan{
+  width: 500px;
   display: flex;
   gap: 40px;
 }

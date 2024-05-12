@@ -2,7 +2,7 @@
 @section('content')
   <div class="hero-page bg-primary py-5">
     <div class="container">
-      <h1 class="text-white fw-bold text-center">Forum</h1>
+      <h1 class="text-white fw-bold text-center">Forum - Postingan Saya</h1>
     </div>
   </div>
   <div class="container">
