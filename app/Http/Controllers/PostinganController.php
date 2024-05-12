@@ -16,9 +16,8 @@ class PostinganController extends Controller
     {
         $postingan = DB::table('postingan')
                         ->join('users', 'postingan.users_id', "=", "users.id")
-                        ->select('id_postingan', 'judul_postingan', "deskripsi", "tgl_upload", "gambar_postingan", "name", "email", "foto_profile")
+                        ->select('id_postingan', 'judul_postingan', "deskripsi", "tgl_upload", "gambar_postingan", "name", "email", "foto_profile", "active_nonactive")
                         ->where('users_id', auth()->user()->id)
-                        ->where('active_nonactive', 1)
                         ->orderBy('id_postingan', 'desc')
                         ->get();
         $data = [];
@@ -39,7 +38,8 @@ class PostinganController extends Controller
                 "name" => $postingan[$i]->name ,
                 "email" => $postingan[$i]->email,
                 "foto_profile" => $postingan[$i]->foto_profile,
-                "komentar" => $komentar
+                "komentar" => $komentar,
+                "active_nonactive" => $postingan[$i]->active_nonactive
             ];
         }
 

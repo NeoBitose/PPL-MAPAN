@@ -298,7 +298,11 @@ label{
   align-items: center;
   padding: 30px 0px;
 }
+.wrap-post{
+  position: relative;
+}
 .card-postingan{
+  position: relative;
   width: 980px;
   padding: 40px;
   background-color: white;
@@ -307,6 +311,25 @@ label{
   flex-direction: column;
   gap: 25px;
   border-radius: 10px;
+}
+.nonactive{
+  position: absolute;
+  width: 980px;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 4;
+}
+.text-nonactive{
+  position: absolute;
+  width: 980px;
+  height: 100%;
+  z-index: 8;
+}
+.text-nonactive h1{
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
 }
 .card-postingan h5{
   font-size: 15px;
@@ -390,6 +413,10 @@ label{
   display: none;
   overflow: hidden;
 }
+.bars-postingan{
+  position: relative;
+  z-index: 10;
+}
 .content-postingan{
   /* position: relative; */
   bottom: 30px; 
@@ -403,11 +430,16 @@ label{
   justify-content: end;
 }
 .box-postingan{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   background-color: white;
   width: 180px;
   padding: 15px;
   border: 1px solid lightgray;
   border-radius: 10px;
+  position: relative;
+  z-index: 10;
 }
 .box-postingan a, .nonaktif-postingan a{
   text-decoration: none;
