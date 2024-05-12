@@ -339,8 +339,13 @@ label{
   width: 900px;
   height: auto;
 }
-.komentar form{
-  display: flex;
+.komentar .add-komentar{
+  display: flex ;
+  flex-direction: column;
+  width: 500px;
+}
+.komentar .edit-komentar{
+  display: none ;
   flex-direction: column;
   width: 500px;
 }

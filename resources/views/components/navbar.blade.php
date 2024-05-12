@@ -26,7 +26,7 @@
         <div class="d-lg-flex d-sm-block w-50 justify-content-end">
           @if (auth()->user())
             <div class="profile">
-              <img src="{{ asset('img/profile/'.auth()->user()->foto_profile) }}">
+              <img src="@if(auth()->user()->foto_profile != "") {{ asset('img/profile/'.auth()->user()->foto_profile) }} @endif ">
               <p>{{ auth()->user()->name }}</p>
             </div>
             {{-- <form method="POST" action="{{ route('logout') }}">
