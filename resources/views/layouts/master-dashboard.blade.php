@@ -50,6 +50,29 @@
   <!-- Demo JS - remove this in your project -->
   <script src="{{asset('admin/assets/js/demo.min.js')}}"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    const form_logout = $('#form-logout');
+    $('.logout').click(function(e) {
+      e.preventDefault();
+        console.log("ok")
+        Swal.fire({
+          title: 'Apakah anda yakin untuk keluar?',
+          text: '',
+          icon: 'question',
+          showConfirmButton: true,
+          showCancelButton: true,
+          confirmButtonText: 'Yakin',
+          cancelButtonText: 'Batal'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("ok")
+            form_logout.submit();
+          }
+        })
+    });
+  </script>
+
 </body>
 
 </html>

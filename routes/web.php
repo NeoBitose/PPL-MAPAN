@@ -25,7 +25,7 @@ Route::get('/', [IndexController::class, 'index']);
 Route::resource('/diagnosa', DiagnosaController::class);
 Route::post('/hasil-diagnosa', [DiagnosaController::class, 'diagnosa']);
 Route::get('/forum', [IndexController::class, 'forum']);
-Route::post('/search', [IndexController::class, 'search']);
+Route::get('/search', [IndexController::class, 'search']);
 Route::get('/komentar', [PostinganController::class, 'komentar']);
 
 Route::get('/dashboard', function () {
@@ -44,6 +44,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile-user', [ProfileController::class, 'show_user']);
     Route::get('/edit-admin/{id}', [ProfileController::class, 'edit_admin']);
     Route::get('/edit-user', [ProfileController::class, 'edit_user']);
+    Route::post('/hapus-foto/{id}', [ProfileController::class, 'hapus_foto']);
     Route::post('/update-admin/{id}', [ProfileController::class, 'update_admin']);
     Route::post('/update-user/{id}', [ProfileController::class, 'update_user']);
 

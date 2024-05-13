@@ -11,19 +11,17 @@
         <div class="btn-postingan">
         @auth
           @if (auth()->user()->role == 'user')
-            
               <a href="/postingan/create">
                 <button class="bg-primary">Tambah Postingan</button>
               </a>
               <a href="/postingan">
                 <button class="bg-warning">Postingan Saya</button>
               </a>
-            
           @endif
         @endauth
         </div>
         <div class="search-form">
-          <form action="/search" method="post">
+          <form action="/search">
             @csrf
             <input type="search" name="cari" id="" placeholder="Cari disini lalu enter">
             {{-- <button type="submit" class="btn-search bg-success">Cari</button> --}}

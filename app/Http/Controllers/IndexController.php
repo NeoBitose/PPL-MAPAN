@@ -50,16 +50,16 @@ class IndexController extends Controller
     }
 
     public function search(Request $request){
-        $postingan = DB::table('komentar')
-                        ->join('postingan', 'komentar.postingan_id', '=', 'postingan.id_postingan')
+        $postingan = DB::table('postingan')
+                        ->join('komentar', 'komentar.postingan_id', '=', 'postingan.id_postingan')
                         ->join('users', 'postingan.users_id', '=', 'users.id')
-                        ->select('id_postingan', 'judul_postingan', "deskripsi", "tgl_upload", "gambar_postingan", "name", "email", "foto_profile" , 'komentar', 'email', 'active_nonactive')
-                        // ->where('active_nonactive', 1)
-                        ->orWhere('judul_postingan', 'LIKE', "%$request->cari%")
+                        ->select('id_postingan', 'judul_postingan', "deskripsi", "tgl_upload", "gambar_postingan", "name", "email", "foto_profile" , 'komentar', 'active_nonactive')
+                        ->where('judul_postingan', 'LIKE', "%$request->cari%")
                         ->orWhere('name', 'LIKE', "%$request->cari%")
                         ->orWhere('komentar', 'LIKE', "%$request->cari%")
                         ->orderBy('id_postingan')
                         ->get();
+        // dd($postingan);
         $data = [];
 
         for ($i=0; $i < count($postingan); $i++) { 

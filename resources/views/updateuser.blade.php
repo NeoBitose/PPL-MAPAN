@@ -7,7 +7,8 @@
         <h1 class="">Edit Akun</h1>
         <div class="d-flex gap-5 align-items-center">
           <img src="{{ asset('img/profile/'.auth()->user()->foto_profile) }}" class="" alt="">
-          <form action="" class="form-delete-foto">
+          <form action="/hapus-foto/{{auth()->user()->id}}" method="post" class="form-delete-foto">
+            @csrf
             <button>Hapus</button>
           </form>
         </div>
