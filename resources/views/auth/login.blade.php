@@ -23,7 +23,8 @@
         <button type="submit" class="btn-form confirm-login">Submit</button>
       </div>
       <div class="footer-form">
-        <p>Belum punya akun ? <a href="/register">Daftar</a></p>
+        <p>Belum punya akun ? <a href="/register" class="log-reg">Daftar</a></p>
+        <p>Atau <a href="/" class="back">Kembali ke halaman awal</a></p>
       </div>
     </form>
   </div>

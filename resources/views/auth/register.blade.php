@@ -28,7 +28,8 @@
         <button type="submit" class="btn-form confirm-register">Submit</button>
       </div> 
       <div class="footer-form">
-        <p>Sudah punya akun ? <a href="/login">Masuk</a></p>
+        <p>Sudah punya akun ? <a href="/login" class="log-reg">Masuk</a></p>
+        <p>Atau <a href="/" class="back">Kembali ke halaman awal</a></p>
       </div>
     </form>
   </div>

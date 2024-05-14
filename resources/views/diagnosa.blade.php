@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
   
-  <div class="hero-diagnosa bg-primary py-5">
+  <div class="hero-page bg-primary py-5">
     <div class="container">
       <h1 class="text-white fw-bold text-center">Deteksi Penyakit</h1>
     </div>
@@ -142,8 +142,6 @@
     </div>
     @endif
   </div>
-  
-  
   <div class="copyright text-center w-100 bg-dark py-4">
     <h4 class="text-white m-0">MAPAN Copyright © 2024 | Made With Love</h4>
   </div>

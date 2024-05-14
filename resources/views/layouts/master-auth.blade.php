@@ -5,10 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login User</title>
+  <link rel="shortcut icon" href="{{ asset('img/logo_mapan.png') }}" type="image/x-icon">
   <link rel="stylesheet" href="{{asset('css/auth.css')}}">
 </head>
 
 <body>
+  @include('sweetalert::alert')
   @yield('content')
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -1,9 +1,14 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DiagnosaController;
+use App\Http\Controllers\GejalaPenyakitController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\KomentarController;
+use App\Http\Controllers\PenyakitController;
+use App\Http\Controllers\PostinganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,16 +24,40 @@ use App\Http\Controllers\IndexController;
 Route::get('/', [IndexController::class, 'index']);
 Route::resource('/diagnosa', DiagnosaController::class);
 Route::post('/hasil-diagnosa', [DiagnosaController::class, 'diagnosa']);
-
+Route::get('/forum', [IndexController::class, 'forum']);
+Route::get('/search', [IndexController::class, 'search']);
+Route::get('/komentar', [PostinganController::class, 'komentar']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+    Route::view('/dashboard', 'admin.dashboard');
+    Route::view('/view-profile', 'detailuser');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/profile-admin', [ProfileController::class, 'show_admin']);
+    Route::get('/profile-user', [ProfileController::class, 'show_user']);
+    Route::get('/edit-admin/{id}', [ProfileController::class, 'edit_admin']);
+    Route::get('/edit-user', [ProfileController::class, 'edit_user']);
+    Route::post('/hapus-foto/{id}', [ProfileController::class, 'hapus_foto']);
+    Route::post('/update-admin/{id}', [ProfileController::class, 'update_admin']);
+    Route::post('/update-user/{id}', [ProfileController::class, 'update_user']);
+
+    Route::get('/dash-post', [DashboardController::class, 'dashboard_postingan']);
+    Route::get('/nonaktif-postingan/{id}', [PostinganController::class, 'nonaktif_postingan']);
+    Route::resource('/postingan', PostinganController::class);
+    Route::resource('/komentar', KomentarController::class);
+
+    Route::resource('/penyakit', PenyakitController::class);
+    Route::resource('/gajala-penyakit', GejalaPenyakitController::class);
+
 });
+
+
 
 require __DIR__.'/auth.php';
