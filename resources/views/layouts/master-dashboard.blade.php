@@ -15,12 +15,16 @@
   <link rel="stylesheet" href="{{asset('admin/assets/vendor/nucleo/css/nucleo.css')}}" type="text/css">
   <link rel="stylesheet" href="{{asset('admin/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" type="text/css">
   <!-- Page plugins -->
+  <link rel="stylesheet" href="{{asset('admin/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('admin/assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('admin/assets/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css')}}">
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{asset('admin/assets/css/argon.css?v=1.1.0')}}" type="text/css">
   <link rel="stylesheet" href="{{asset('css/style-dash.css')}}">
 </head>
 
 <body>
+  
   <!-- Sidenav -->
   @include('components.sidebar')
   <!-- Main content -->
@@ -45,11 +49,25 @@
   <!-- Optional JS -->
   <script src="{{asset('admin/assets/vendor/chart.js/dist/Chart.min.js')}}"></script>
   <script src="{{asset('admin/assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
+  <script src="{{asset('admin/assets/vendor/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+  <script src="{{asset('admin/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+  <script src="{{asset('admin/assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
+  <script src="{{asset('admin/assets/vendor/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js')}}"></script>
+  <script src="{{asset('admin/assets/vendor/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
+  <script src="{{asset('admin/assets/vendor/datatables.net-buttons/js/buttons.flash.min.js')}}"></script>
+  <script src="{{asset('admin/assets/vendor/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
+  <script src="{{asset('admin/assets/vendor/datatables.net-select/js/dataTables.select.min.js')}}"></script>
+  <!-- Argon JS -->
+  <script src="{{asset('assets/js/argon.js?v=1.1.0')}}"></script>
+  <!-- Demo JS - remove this in your project -->
+  <script src="{{asset('assets/js/demo.min.js')}}"></script>
   <!-- Argon JS -->
   <script src="{{asset('admin/assets/js/argon.js?v=1.1.0')}}"></script>
   <!-- Demo JS - remove this in your project -->
   <script src="{{asset('admin/assets/js/demo.min.js')}}"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  @yield('script')
 
   <script>
     const form_logout = $('#form-logout');

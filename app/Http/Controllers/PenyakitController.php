@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class PenyakitController extends Controller
 {
@@ -21,8 +22,7 @@ class PenyakitController extends Controller
      */
     public function create()
     {
-        $gejala = DB::table('gejala_penyakit')->get();
-        return view('penyakit.tambah', compact('gejala'));
+        
     }
 
     /**
@@ -30,7 +30,19 @@ class PenyakitController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $file = $request->file('gambar');
+        $nama_file = Str::random(20) . '.' . $file->extension();
+        $file->move('img/penyakit', $nama_file);
+
+        DB::table('penyakit')->insert([
+            "nama_penyakit" => $request->nama,
+            "definisi" => $request->definisi,
+            "pengendalian_teknis" => $request->teknis,
+            "pengendalian_gejala" => $request->gejala,
+            "foto_penyakit" => $nama_file,
+        ]);
+
+        return redirect('penyakit');
     }
 
     /**
