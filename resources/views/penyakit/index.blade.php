@@ -5,19 +5,19 @@
       <h1 class="mb-0">List Data Penyakit</h1>
     </div>
     <div class="mt-3">
-      <form action="/penyakit" method="post" class="form-data" enctype="multipart/form-data">
+      <form action="/penyakit" method="post" class="form-data" enctype="multipart/form-data" id="tambah-penyakit">
         @csrf
         <label for="">Nama Penyakit</label>
-        <input type="text" name="nama">
+        <input type="text" name="nama" id="nama_penyakit">
         <label for="">Definisi</label>
-        <input type="text" name="definisi">
+        <input type="text" name="definisi" id="definsi">
         <label for="">Pengendalian Teknis</label>
-        <input type="text" name="teknis">
+        <input type="text" name="teknis" id="teknis">
         <label for="">Pengendalian Gejala</label>
-        <input type="text" name="gejala">
+        <input type="text" name="gejala" id="gejala">
         <label for="">Foto Penyakit</label>
-        <input type="file" value="" name="gambar">
-        <button type="submit">
+        <input type="file" name="gambar">
+        <button type="submit" class="btn-tmbh-penyakit">
           Tambah Penyakit
         </button>
       </form>

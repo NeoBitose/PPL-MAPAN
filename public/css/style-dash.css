@@ -1,3 +1,6 @@
+button{
+  line-height: normal;
+}
 .card-dash{
   position: relative;
   bottom: 50px;

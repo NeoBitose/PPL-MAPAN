@@ -70,6 +70,7 @@
   @yield('script')
 
   <script>
+
     const form_logout = $('#form-logout');
     $('.logout').click(function(e) {
       e.preventDefault();
@@ -88,6 +89,43 @@
             form_logout.submit();
           }
         })
+    });
+
+    const tambah_penyakit = $('#tambah-penyakit');
+    $('.btn-tmbh-penyakit').click(function(e) {
+      e.preventDefault();
+      if (document.getElementById("nama_penyakit").value === "" || document.getElementById("definisi").value === "" || document.getElementById("teknis").value === "" || document.getElementById("gejala").value === "" || document.getElementById("gambar").value === "") {
+        console.log("berhasil");
+        e.preventDefault();
+        Swal.fire({
+          title: "Ada data yang masih kosong!",
+          text: "",
+          icon: "error",
+          confirmButtonText: 'Oke',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("ok kosong");
+          }
+        });
+      }
+      else{
+        Swal.fire({
+          title: 'Apakah anda yakin untuk menambah data??',
+          text: '',
+          icon: 'question',
+          showConfirmButton: true,
+          showCancelButton: true,
+          confirmButtonText: 'Yakin',
+          cancelButtonText: 'Batal'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("ok")
+            tambah_penyakit.submit();
+          }
+        })
+      }
+      console.log("ok")
+      
     });
   </script>
 
