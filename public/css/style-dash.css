@@ -1,6 +1,10 @@
 button{
   line-height: normal;
 }
+.borders{
+  border: 1px solid #000;
+  border-radius: 5px;
+}
 .card-dash{
   position: relative;
   bottom: 50px;
@@ -39,7 +43,7 @@ button{
   font-size: 16px;
   font-weight: 700;
 }
-.form-data input{
+.form-data input, select{
   padding: 15px 10px;
   font-size: 16px;
   border: 1px solid black;
@@ -63,6 +67,9 @@ button{
   border: none;
   border-radius: 10px;
   margin-top: 20px;
+}
+.check-penyakit {
+  margin: 20px;
 }
 .form-update{
   display: flex;

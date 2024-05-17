@@ -54,7 +54,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/komentar', KomentarController::class);
 
     Route::resource('/penyakit', PenyakitController::class);
-    Route::resource('/gajala-penyakit', GejalaPenyakitController::class);
+    Route::resource('/gejala-penyakit', GejalaPenyakitController::class);
 
 });
 

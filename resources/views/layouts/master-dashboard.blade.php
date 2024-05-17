@@ -127,6 +127,58 @@
       console.log("ok")
       
     });
+
+    const tambah_gejala = $('#tambah-gejala');
+    $('.btn-tmbh-gejala').click(function(e) {
+      e.preventDefault();
+      let cek_penyakit = 0;
+      $(".check-input").each(function() {
+        if ($(this).prop("checked")) {
+          cek_penyakit += 1
+        }
+      });
+      if (document.getElementById("nama_gejala").value === "" || document.getElementById("klasifikasi").value === "") {
+        Swal.fire({
+          title: "Ada data yang masih kosong!",
+          text: "",
+          icon: "error",
+          confirmButtonText: 'Oke',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("ok kosong");
+          }
+        });
+      }
+      else if (cek_penyakit <= 0) {
+        Swal.fire({
+          title: "Ada data yang masih kosong!",
+          text: "",
+          icon: "error",
+          confirmButtonText: 'Oke',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("ok kosong");
+          }
+        });
+      }
+      else {
+        Swal.fire({
+          title: 'Apakah anda yakin untuk menambah data??',
+          text: '',
+          icon: 'question',
+          showConfirmButton: true,
+          showCancelButton: true,
+          confirmButtonText: 'Yakin',
+          cancelButtonText: 'Batal'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("ok")
+            tambah_gejala.submit();
+          }
+        })
+      }
+        
+    });
   </script>
 
 </body>
