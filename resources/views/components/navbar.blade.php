@@ -20,7 +20,7 @@
             <a class="nav-link" href="/forum">Forum</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Tentang</a>
+            <a class="nav-link" href="/#tentang">Tentang</a>
           </li>
         </ul>
         <div class="d-lg-flex d-sm-block w-50 justify-content-end">

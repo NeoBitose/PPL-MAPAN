@@ -17,6 +17,9 @@
 <body>
   @include('components.navbar')
   @yield('content')
+  <div class="copyright text-center w-100 bg-dark py-4">
+    <h4 class="text-white m-0">MAPAN Copyright © 2024 | Made With Love</h4>
+  </div>
   <script src="{{ asset('bootstrap/js/bootstrap.bundle.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>

@@ -6,10 +6,26 @@ body{
   min-width: 100vw;
   min-height: 100vh;
 }
+ul{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+ol li{
+  list-style-type: decimal;
+}
 .flex{
   display: flex;
   gap: 10px;
   align-items: center;
+}
+.title-index{
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 100vw;
+  color: #1F4E3C;
 }
 .navbar-brand{
   display: flex;
@@ -44,11 +60,52 @@ body{
 .footer-link h4{
   font-size: 15px;
   color: #27AE60;
+  margin-bottom: 15px;
+}
+.footer-link li{
+  margin-bottom: 5px;
 }
 .footer-link a{
   font-size: 15px;
-  color: white;
+  color: #BDBDBD;
   text-decoration: none;
+  font-weight: 500;
+}
+.footer-link a:hover{
+  color: white;
+}
+.footer-content{
+  display: flex;
+}
+.footer-left{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-right: 20px;
+}
+.footer-left p{
+  text-align: center;
+  color: white;
+  font-weight: 500;
+}
+.footer-right{
+  width: 80%;
+  border-left: 1px solid white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.kontak h2{
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 30px;
+}
+.kontak i {
+  overflow-y: hidden;
 }
 .copyright{
   height: 65px;
@@ -203,10 +260,11 @@ body{
 }
 .card-group{
   background-image: url('../img/card-bg.png');
-  background-size: 100vw 80vh;
+  background-size: 100vw auto;
   background-repeat: no-repeat;
   width: 100vw;
-  height: 80vh;
+  padding: 100px 0px;
+  /* height: 80vh; */
 }
 .card img{
   width: 280px;
@@ -225,6 +283,53 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.tentang{
+  padding: 100px 0px;
+}
+.tentang-content{
+  display: flex;
+}
+.tentang-left{
+  width: 40%;
+}
+.tentang-right{
+  width: 50%;
+}
+.tentang p{
+  text-align: justify;
+}
+.tentang h5{
+  font-size: 24px;
+  font-weight: 600;
+}
+.tentang td{
+  vertical-align: top;
+  padding-right: 10px;
+  text-align: justify;
+}
+.fitur{
+  padding: 100px 0px;
+  background-color: #F3F4F6;
+}
+.card-fitur{
+  border: 2px solid #1F4E3C;
+  padding: 30px;
+  border-radius: 10px;
+}
+.img-fitur{
+  width: 40px;
+  margin-left: 10px;
+}
+.card-fitur h5{
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.card-fitur p{
+  font-size: 14px;
+  margin-bottom: 50px;
+  text-align: justify;
 }
 
 /* Diagnosa */
