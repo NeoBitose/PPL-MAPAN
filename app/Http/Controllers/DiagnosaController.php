@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\M_Gejala;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use GuzzleHttp\Client;
@@ -16,8 +17,7 @@ class DiagnosaController extends Controller
     private $param;
     public function index()
     {
-        $daun = DB::table('gejala')
-                    ->join('klasifikasi_gejala', 'gejala.klasifikasi_gejala_id', '=', 'klasifikasi_gejala.id_klasifikasi_gejala')
+        $daun = M_Gejala::join('klasifikasi_gejala', 'gejala.klasifikasi_gejala_id', '=', 'klasifikasi_gejala.id_klasifikasi_gejala')
                     ->where('nama_bagian', 'daun')
                     ->get();
         $tangkai = DB::table('gejala')
