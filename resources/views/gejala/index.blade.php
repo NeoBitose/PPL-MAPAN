@@ -3,7 +3,7 @@
 
   <div class="card card-data">
     <div class="card-header">
-      <h1 class="mb-0">List Data Penyakit</h1>
+      <h1 class="mb-0">List Data Gejala Penyakit</h1>
     </div>
     <div class="mt-3">
       <form action="/gejala-penyakit" method="post" class="form-data" enctype="multipart/form-data" id="tambah-gejala">
@@ -42,7 +42,7 @@
   <div class="card card-dash mt-5">
     <!-- Card header -->
     <div class="card-header">
-      <h1 class="mb-0">List Data Penyakit</h1>
+      <h1 class="mb-0">List Data Gejala Penyakit</h1>
     </div>
     <div class="pb-4 table-responsive">
       <table class="table table-flush" id="datatable-basic">

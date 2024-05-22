@@ -14,6 +14,12 @@ ul{
 ol li{
   list-style-type: decimal;
 }
+.w-60{
+  width: 60%;
+}
+.w-40{
+  width: 40%;
+}
 .flex{
   display: flex;
   gap: 10px;
@@ -34,7 +40,7 @@ ol li{
 }
 .navbar-brand img{
   width: 45px;
-  height: 45px;
+  height: auto;
 }
 .navbar button{
   width: 83px;
@@ -219,6 +225,53 @@ ol li{
   padding: 0px;
 }
 
+@media (max-width:425px) {
+  nav{
+    padding: 15px 0px;
+  }
+  .navbar-toggler{
+    display: flex;
+    justify-content: end;
+    overflow: hidden;
+  }
+  .footer-content{
+    display: block;
+  }
+  .footer-left{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: auto;  
+  }
+  .footer-left p{
+    text-align: center;
+    color: white;
+    font-weight: 500;
+  }
+  .footer-right{
+    width: 80%;
+    border-left: 0px;
+    padding: 20px 40px;
+    display: block;
+    justify-content: space-between;
+  }
+  .kontak{
+    margin-top: 20px;
+  }
+  .kontak h2{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 20px;
+  }
+  .kontak i {
+    overflow-y: hidden;
+  }
+}
+
 /* Index */
 
 .hero{
@@ -267,7 +320,7 @@ ol li{
   /* height: 80vh; */
 }
 .card img{
-  width: 280px;
+  width: 100%;
   height: 290px;
   object-fit: cover;
 }
@@ -332,6 +385,51 @@ ol li{
   text-align: justify;
 }
 
+@media (max-width:1400px){
+  .card img{
+    height: 220px;
+    object-fit: cover;
+  }
+  .card-landing{
+    height: 100px;
+  }
+}
+@media (max-width:425px){
+  .card-group{
+    background-image: none;
+  }
+  .card img{
+    height: 170px;
+    object-fit: cover;
+  }
+  .hero h1{
+    font-size: 45px;
+  }
+  .hero h1 span{
+    color: #FA9B0D;
+  }
+  .hero p{
+    font-size: 20px;
+  }
+  .tentang-content{
+    display: block;
+  }
+  .tentang-left{
+    width: 85%;
+    margin: auto;
+  }
+  .tentang-left img{
+    margin-bottom: 20px;
+  }
+  .tentang-right{
+    width: 85%;
+    margin: auto;
+  }
+  .card-fitur p{ 
+    margin-bottom: 30px;
+  }
+}
+
 /* Diagnosa */
 
 label{
@@ -348,7 +446,7 @@ label{
   color: white;
 }
 .diagnosa-card h1{
-  font-size: 60px;
+  font-size: 45px;
 }
 .diagnosa-card h3{
   font: size 32px;
@@ -358,6 +456,10 @@ label{
 }
 .main-deteksi{
   height: 70vh;
+}
+.hasil-footer{
+  border-top: 2px solid #1F4E3C;
+  background-color: #E6E6E6;
 }
 
 /* Forum */

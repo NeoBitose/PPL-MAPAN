@@ -114,7 +114,7 @@
       </form>
     </div>
     {{-- @php
-        dd($diagnosa);
+        dd($probabilitas);
     @endphp --}}
     @if ($diagnosa[0] != null)
     <div class="container py-5">
@@ -125,7 +125,7 @@
           </h3>
         </div>
         <div class="card-body text-primary hasil-diagnosa p-4">
-          <h1 class="card-title fw-bold">Penyakit {{$diagnosa[0]->nama_penyakit}}</h1>
+          <h1 class="card-title fw-bold">{{number_format($probabilitas[0][0][1], 2)}}% - Penyakit {{$diagnosa[0]->nama_penyakit}}</h1>
           <p class="card-text">
             {{$diagnosa[0]->definisi}}
           </p>
@@ -136,6 +136,15 @@
           <h3 class="card-title fw-bold">Pengendalian Gejala</h3>
           <p class="card-text">
             {{$diagnosa[0]->pengendalian_gejala}}
+          </p>
+        </div>
+        <div class="card-footer text-primary hasil-footer p-4">
+          <h3 class="card-title fw-bold">Probabilitas Penyakit Lain:</h3>
+          <p class="card-text mb-2">
+            {{number_format($probabilitas[0][1][1],2)}}% - {{$probabilitas[0][1][0]}}
+          </p>
+          <p class="card-text mb-2">
+            {{number_format($probabilitas[0][2][1],2)}}% - {{$probabilitas[0][2][0]}}
           </p>
         </div>
       </div>

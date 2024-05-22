@@ -18,11 +18,11 @@
     <div class="contains">
       <div class="row">
         @for ($i = 0; $i < count($penyakit); $i++)
-          <div class="col-2">
+          <div class="col-6 col-md-4 col-xxl-2 mb-4 mb-lg-0 py-2">
             <div class="card" style="">
-              <img src="{{ asset('img/penyakit/' . $penyakit[$i]->foto_penyakit) }}" class="card-img-top img-fluid" alt="...">
+              <img src="{{ asset('img/penyakit/' . $penyakit[$i]->foto_penyakit) }}" class="card-img-top img-fluid w-full" alt="...">
               <div class="card-landing card-body">
-                <h5 class="card-title text-center px-5 py-3 text-primary fw-medium fs-4">
+                <h5 class="card-title text-center px-1 py-1  text-primary fw-medium fs-4">
                   {{ $penyakit[$i]->nama_penyakit }}
                 </h5>
               </div>
@@ -67,7 +67,7 @@
     <h1 class="title-index">Fitur Tersedia</h1>
     <div class="container">
       <div class="row">
-        <div class="col-4">
+        <div class="col-12 mb-4 mb-md-0 col-lg-4">
           <div class="card-fitur">
             <img src="{{ asset("/img/icon/AI.png") }}" class="img-fitur" alt="">
             <h5>Deteksi Penyakit Berbasis AI</h5>
@@ -77,7 +77,7 @@
             <img src="{{ asset("/img/icon/PANAH.png") }}" alt="">
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-12 mb-4 mb-md-0 col-lg-4">
           <div class="card-fitur">
             <img src="{{ asset("/img/icon/FORUM.png") }}" class="img-fitur" alt="">
             <h5>Forum</h5>
@@ -87,7 +87,7 @@
             <img src="{{ asset("/img/icon/PANAH.png") }}" alt="">
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-12 mb-4 mb-md-0 col-lg-4">
           <div class="card-fitur">
             <img src="{{ asset("/img/icon/AKUN.png") }}" class="img-fitur" alt="">
             <h5>Akun</h5>

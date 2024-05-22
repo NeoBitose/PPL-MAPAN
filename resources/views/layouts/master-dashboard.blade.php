@@ -58,16 +58,25 @@
   <script src="{{asset('admin/assets/vendor/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
   <script src="{{asset('admin/assets/vendor/datatables.net-select/js/dataTables.select.min.js')}}"></script>
   <!-- Argon JS -->
-  <script src="{{asset('assets/js/argon.js?v=1.1.0')}}"></script>
+  <script src="{{asset('assets/js/argon.js')}}"></script>
   <!-- Demo JS - remove this in your project -->
   <script src="{{asset('assets/js/demo.min.js')}}"></script>
   <!-- Argon JS -->
-  <script src="{{asset('admin/assets/js/argon.js?v=1.1.0')}}"></script>
+  <script src="{{asset('admin/assets/js/argon.js')}}"></script>
   <!-- Demo JS - remove this in your project -->
   <script src="{{asset('admin/assets/js/demo.min.js')}}"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   @yield('script')
+
+  <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 
   <script>
 
@@ -94,9 +103,8 @@
     const tambah_penyakit = $('#tambah-penyakit');
     $('.btn-tmbh-penyakit').click(function(e) {
       e.preventDefault();
-      if (document.getElementById("nama_penyakit").value === "" || document.getElementById("definisi").value === "" || document.getElementById("teknis").value === "" || document.getElementById("gejala").value === "" || document.getElementById("gambar").value === "") {
+      if (document.getElementById("nama-penyakit").value == null || document.getElementById("definisi-penyakit").value == null || document.getElementById("kendali-teknis").value === "" || document.getElementById("kendali-gejala").value === "" || document.getElementById("gambar-penyakit").value === "") {
         console.log("berhasil");
-        e.preventDefault();
         Swal.fire({
           title: "Ada data yang masih kosong!",
           text: "",
