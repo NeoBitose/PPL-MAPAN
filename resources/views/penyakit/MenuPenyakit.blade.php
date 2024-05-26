@@ -10,13 +10,13 @@
         <label for="">Nama Penyakit</label>
         <input type="text" name="nama" id="nama-penyakit">
         <label for="">Definisi</label>
-        <input type="text" name="definisi" id="definsi-penyakit">
+        <input type="text" name="definisi" id="definisi-penyakit">
         <label for="">Pengendalian Teknis</label>
         <input type="text" name="teknis" id="kendali-teknis">
         <label for="">Pengendalian Gejala</label>
         <input type="text" name="gejala" id="kendali-gejala">
         <label for="">Foto Penyakit</label>
-        <input type="file" name="gambar-penyakit">
+        <input type="file" name="gambar">
         <button type="submit" class="btn-tmbh-penyakit">
           Tambah Penyakit
         </button>

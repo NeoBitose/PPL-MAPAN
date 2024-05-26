@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Penyakit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class PenyakitController extends Controller
+class MenuPenyakit extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $penyakit = DB::table('penyakit')->get();
-        return view('penyakit.index', compact('penyakit'));
+        $penyakit = Penyakit::get();
+        return view('penyakit.MenuPenyakit', compact('penyakit'));
     }
 
     /**

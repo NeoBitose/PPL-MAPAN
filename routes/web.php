@@ -7,7 +7,7 @@ use App\Http\Controllers\DiagnosaController;
 use App\Http\Controllers\GejalaPenyakitController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\KomentarController;
-use App\Http\Controllers\PenyakitController;
+use App\Http\Controllers\MenuPenyakit;
 use App\Http\Controllers\PostinganController;
 
 /*
@@ -53,7 +53,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/postingan', PostinganController::class);
     Route::resource('/komentar', KomentarController::class);
 
-    Route::resource('/penyakit', PenyakitController::class);
+    Route::resource('/penyakit', MenuPenyakit::class);
     Route::resource('/gejala-penyakit', GejalaPenyakitController::class);
 
 });
