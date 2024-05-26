@@ -12,12 +12,12 @@
       <div class="main-form">
         <div class="email input">
           <label class="label" for="email">Email</label>
-          <input class="form-input" type="text" name="email" id="email" autofocus>
+          <input class="form-input" type="text" name="email" id="email" value="{{old('email')}}" autofocus>
           <small class="red-text" id="message-email"></small>
         </div>
         <div class="username input">
           <label class="label" for="username">Username</label>
-          <input class="form-input" type="text" name="name" id="username">
+          <input class="form-input" type="text" name="name" id="username" value="{{old('name')}}">
           <small class="red-text" id="message-username"></small>
         </div>
         <div class="password input">

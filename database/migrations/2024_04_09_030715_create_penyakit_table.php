@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('penyakit', function (Blueprint $table) {
             $table->increments('id_penyakit');
-            $table->string('nama_penyakit', 50);
+            $table->string('nama_penyakit');
             $table->text('definisi');
             $table->text('pengendalian_teknis');
             $table->text('pengendalian_gejala');

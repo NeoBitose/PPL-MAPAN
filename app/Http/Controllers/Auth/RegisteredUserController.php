@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class RegisteredUserController extends Controller
 {
@@ -35,6 +37,20 @@ class RegisteredUserController extends Controller
         //     'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
         //     'password' => ['required', 'confirmed', Rules\Password::defaults()],
         // ]);
+        
+        $email = User::where('email', $request->email)->first();
+        $user = User::where('name', $request->name)->first();
+            // dd($email, $user);
+        if ($user != null) {
+            Alert::error('Username sudah digunakan', '');
+            return redirect()->back();
+            exit();
+        }
+        if ($email != null) {
+            Alert::error('Email sudah digunakan', '');
+            return redirect()->back();
+            exit();
+        }
 
         $user = User::create([
             'name' => $request->name,

@@ -29,7 +29,7 @@
         title: "Semua data harus diisi!",
         text: "",
         icon: "error",
-        confirmButtonText: 'Ok',
+        confirmButtonText: 'Oke',
         }).then((result) => {
           if (result.isConfirmed) {
             // location.href = '/login';
@@ -42,7 +42,7 @@
         title: "Password minimal 8 karakter",
         text: "",
         icon: "error",
-        confirmButtonText: 'Ok',
+        confirmButtonText: 'Oke',
         }).then((result) => {
           if (result.isConfirmed) {
             // location.href = '/login';
@@ -68,7 +68,7 @@
         title: "Semua data harus diisi!",
         text: "",
         icon: "error",
-        confirmButtonText: 'Ok',
+        confirmButtonText: 'Oke',
         }).then((result) => {
           if (result.isConfirmed) {
             // location.href = '/register';
@@ -81,7 +81,7 @@
         title: "Email Harus valid, tambahkan '@'",
         text: "",
         icon: "error",
-        confirmButtonText: 'Ok',
+        confirmButtonText: 'Oke',
         }).then((result) => {
           if (result.isConfirmed) {
             // location.href = '/register';
@@ -94,7 +94,7 @@
         title: "Password minimal 8 karakter",
         text: "",
         icon: "error",
-        confirmButtonText: 'Ok',
+        confirmButtonText: 'Oke',
         }).then((result) => {
           if (result.isConfirmed) {
             // location.href = '/register';
