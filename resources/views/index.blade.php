@@ -67,7 +67,7 @@
     <h1 class="title-index">Fitur Tersedia</h1>
     <div class="container">
       <div class="row">
-        <div class="col-12 mb-4 mb-md-0 col-lg-4">
+        <div class="col-12 mb-4 mb-lg-0 col-lg-4">
           <div class="card-fitur">
             <img src="{{ asset("/img/icon/AI.png") }}" class="img-fitur" alt="">
             <h5>Deteksi Penyakit Berbasis AI</h5>
@@ -77,7 +77,7 @@
             <img src="{{ asset("/img/icon/PANAH.png") }}" alt="">
           </div>
         </div>
-        <div class="col-12 mb-4 mb-md-0 col-lg-4">
+        <div class="col-12 mb-4 mb-lg-0 col-lg-4">
           <div class="card-fitur">
             <img src="{{ asset("/img/icon/FORUM.png") }}" class="img-fitur" alt="">
             <h5>Forum</h5>
@@ -87,7 +87,7 @@
             <img src="{{ asset("/img/icon/PANAH.png") }}" alt="">
           </div>
         </div>
-        <div class="col-12 mb-4 mb-md-0 col-lg-4">
+        <div class="col-12 mb-4 mb-lg-0 col-lg-4">
           <div class="card-fitur">
             <img src="{{ asset("/img/icon/AKUN.png") }}" class="img-fitur" alt="">
             <h5>Akun</h5>
@@ -103,7 +103,7 @@
   <div class="footer bg-primary py-5">
     <div class="container footer-content">
       <div class="footer-left">
-        <img src="{{ asset('/img/mapan-footer.png') }}" alt="">
+        <img src="{{ asset('/img/mapan-footer.png') }}" class="img-fluid" alt="">
         <p>
           Media Pakar Tanaman Padi Berbasis AI
         </p>

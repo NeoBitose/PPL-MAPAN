@@ -58,11 +58,10 @@
   <script src="{{asset('admin/assets/vendor/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
   <script src="{{asset('admin/assets/vendor/datatables.net-select/js/dataTables.select.min.js')}}"></script>
   <!-- Argon JS -->
-  <script src="{{asset('admin/assets/js/argon.js')}}"></script>
+  <script src="{{asset('admin/assets/js/argon.js?v=1.1.0')}}"></script>
   <!-- Demo JS - remove this in your project -->
   <script src="{{asset('admin/assets/js/demo.min.js')}}"></script>
   <!-- Argon JS -->
-  <script src="{{asset('admin/assets/js/argon.js')}}"></script>
   <!-- Demo JS - remove this in your project -->
   <script src="{{asset('admin/assets/js/demo.min.js')}}"></script>
   <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>

@@ -14,6 +14,9 @@ ul{
 ol li{
   list-style-type: decimal;
 }
+nav{
+  padding: 15px 0px;
+}
 .w-60{
   width: 60%;
 }
@@ -48,6 +51,14 @@ ol li{
   border: none;
   color: white;
   border-radius: 5px;
+}
+.navbar-toggler{
+  display: flex;
+  justify-content: end;
+  overflow: hidden;
+}
+.nav-link{
+  margin-left: 0px;
 }
 .main-foot h1{
   font-size: 32px;
@@ -224,16 +235,40 @@ ol li{
   border: none;
   padding: 0px;
 }
+.hero-page{
+  margin-top: 70px;
+}
+
+@media(min-width: 769px){
+  /* .navbar{
+    height: 80px;
+  } */
+  .nav-link{
+    margin-left: 20px;
+  }
+  .hero-page{
+    margin-top: 80px ;
+  }
+}
+
+@media (max-width:768px){
+  /* nav{
+    padding: 15px 0px;
+  } */
+  .profile{
+    justify-content: start;
+  }
+  .content-profile{
+    
+    top: 290px;
+  }
+  .detail-content-profile{
+    display: flex;
+    justify-content: start;
+  }
+}
 
 @media (max-width:425px) {
-  nav{
-    padding: 15px 0px;
-  }
-  .navbar-toggler{
-    display: flex;
-    justify-content: end;
-    overflow: hidden;
-  }
   .footer-content{
     display: block;
   }
@@ -394,7 +429,7 @@ ol li{
     height: 100px;
   }
 }
-@media (max-width:425px){
+@media (max-width:768px){
   .card-group{
     background-image: none;
   }
@@ -417,9 +452,11 @@ ol li{
   .tentang-left{
     width: 85%;
     margin: auto;
+    display: flex;
+    justify-content: center;
   }
   .tentang-left img{
-    margin-bottom: 20px;
+    padding-bottom: 20px;
   }
   .tentang-right{
     width: 85%;
@@ -462,10 +499,11 @@ label{
   background-color: #E6E6E6;
 }
 
+
 /* Forum */
 
 .header-forum{
-  width: 980px;
+  width: 100vh;
   display: flex;
   justify-content: space-between;
 }
@@ -515,7 +553,7 @@ label{
 }
 .card-postingan{
   position: relative;
-  width: 980px;
+  width: 100vh;
   padding: 40px;
   background-color: white;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -716,6 +754,26 @@ label{
   height: 18px;
 }
 
+@media(max-width:1440px){
+  .btn-postingan button{
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+@media(max-width:768px){
+  .header-forum{
+    width: 80vh;
+  }
+  .card-postingan{
+    width: 80vh;
+  }
+  .gambar-postingan img{
+    width: 100%;
+  }
+}
+
 /* Profile */
 
 .hero-profile{
@@ -846,16 +904,9 @@ label{
   margin-top: 20px;
 }
 
-
-@media(min-width: 768px){
-  .navbar{
-    height: 80px;
-  }
-  .nav-link{
-    margin-left: 20px;
-  }
-  .hero-page{
-    margin-top: 80px ;
+@media(max-width:768px){
+  .card-update-profile{
+    padding: 40px 50px;
   }
 }
 

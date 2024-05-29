@@ -29,7 +29,7 @@
                     @php
                         $no++
                     @endphp
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6">
                       <div class="form-check">
                         <input class="form-check-input" name="gejala[]" type="checkbox" value="{{$daun[$i]->gejala}}" id="gejala{{$daun[$i]->id_gejala}}">
                         <label class="form-check-label" for="gejala{{$daun[$i]->id_gejala}}">
@@ -61,7 +61,7 @@
                       @php
                         $no++
                       @endphp
-                      <div class="col-6">
+                      <div class="col-12 col-lg-6">
                         <div class="form-check">
                           <input class="form-check-input" name="gejala[]" type="checkbox" value="{{$tangkai[$i]->gejala}}" id="gejala{{$tangkai[$i]->id_gejala}}">
                           <label class="form-check-label" for="gejala{{$tangkai[$i]->id_gejala}}">
@@ -93,7 +93,7 @@
                     @php
                         $no++
                     @endphp
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6">
                       <div class="form-check">
                         <input class="form-check-input" name="gejala[]" type="checkbox" value="{{$malai[$i]->gejala}}" id="gejala{{$malai[$i]->id_gejala}}">
                         <label class="form-check-label" for="gejala{{$malai[$i]->id_gejala}}">
