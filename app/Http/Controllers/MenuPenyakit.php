@@ -35,7 +35,7 @@ class MenuPenyakit extends Controller
         $nama_file = Str::random(20) . '.' . $file->extension();
         $file->move('img/penyakit', $nama_file);
 
-        DB::table('penyakit')->insert([
+        Penyakit::create([
             "nama_penyakit" => $request->nama,
             "definisi" => $request->definisi,
             "pengendalian_teknis" => $request->teknis,

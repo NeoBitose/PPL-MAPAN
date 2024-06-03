@@ -773,6 +773,18 @@ label{
     width: 100%;
   }
 }
+@media(max-width:425px){
+  .search-form input{
+    font-size: 12px;
+  }
+  .header-forum{
+    width: 50vh;
+  }
+  .card-postingan{
+    width: 50vh;
+    box-shadow: none;
+  }
+}
 
 /* Profile */
 

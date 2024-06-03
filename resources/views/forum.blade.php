@@ -21,7 +21,7 @@
         @endauth
         </div>
         <div class="search-form">
-          <form action="/search">
+          <form action="/search" method="post">
             @csrf
             <input type="search" name="cari" id="" placeholder="Cari disini lalu enter">
             {{-- <button type="submit" class="btn-search bg-success">Cari</button> --}}
