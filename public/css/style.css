@@ -782,7 +782,7 @@ label{
   }
   .card-postingan{
     width: 50vh;
-    box-shadow: none;
+    /* box-shadow: none; */
   }
 }
 

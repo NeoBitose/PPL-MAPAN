@@ -8,23 +8,25 @@
   <meta name="author" content="Creative Tim">
   <title>Dashboard - Mapan</title>
   <!-- Favicon -->
-  <link rel="icon" href="{{asset('admin/assets/img/brand/favicon.png')}}" type="image/png">
+  <link rel="icon" href="{{ asset('admin/assets/img/brand/favicon.png') }}" type="image/png">
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <!-- Icons -->
-  <link rel="stylesheet" href="{{asset('admin/assets/vendor/nucleo/css/nucleo.css')}}" type="text/css">
-  <link rel="stylesheet" href="{{asset('admin/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" type="text/css">
+  <link rel="stylesheet" href="{{ asset('admin/assets/vendor/nucleo/css/nucleo.css') }}" type="text/css">
+  <link rel="stylesheet" href="{{ asset('admin/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}"
+    type="text/css">
   <!-- Page plugins -->
-  <link rel="stylesheet" href="{{asset('admin/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}">
-  <link rel="stylesheet" href="{{asset('admin/assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')}}">
-  <link rel="stylesheet" href="{{asset('admin/assets/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('admin/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
+  <link rel="stylesheet"
+    href="{{ asset('admin/assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}">
+  <link rel="stylesheet"
+    href="{{ asset('admin/assets/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css') }}">
   <!-- Argon CSS -->
-  <link rel="stylesheet" href="{{asset('admin/assets/css/argon.css?v=1.1.0')}}" type="text/css">
-  <link rel="stylesheet" href="{{asset('css/style-dash.css')}}">
+  <link rel="stylesheet" href="{{ asset('admin/assets/css/argon.css?v=1.1.0') }}" type="text/css">
+  <link rel="stylesheet" href="{{ asset('css/style-dash.css') }}">
 </head>
 
 <body>
-  
   <!-- Sidenav -->
   @include('components.sidebar')
   <!-- Main content -->
@@ -41,61 +43,60 @@
   </div>
   <!-- Argon Scripts -->
   <!-- Core -->
-  <script src="{{asset('admin/assets/vendor/jquery/dist/jquery.min.js')}}"></script>
-  <script src="{{asset('admin/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('admin/assets/vendor/js-cookie/js.cookie.js')}}"></script>
-  <script src="{{asset('admin/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js')}}"></script>
-  <script src="{{asset('admin/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js')}}"></script>
+  <script src="{{ asset('admin/assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/js-cookie/js.cookie.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js') }}"></script>
   <!-- Optional JS -->
-  <script src="{{asset('admin/assets/vendor/chart.js/dist/Chart.min.js')}}"></script>
-  <script src="{{asset('admin/assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
-  <script src="{{asset('admin/assets/vendor/datatables.net/js/jquery.dataTables.min.js')}}"></script>
-  <script src="{{asset('admin/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-  <script src="{{asset('admin/assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
-  <script src="{{asset('admin/assets/vendor/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js')}}"></script>
-  <script src="{{asset('admin/assets/vendor/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
-  <script src="{{asset('admin/assets/vendor/datatables.net-buttons/js/buttons.flash.min.js')}}"></script>
-  <script src="{{asset('admin/assets/vendor/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
-  <script src="{{asset('admin/assets/vendor/datatables.net-select/js/dataTables.select.min.js')}}"></script>
+  <script src="{{ asset('admin/assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/datatables.net-buttons/js/buttons.flash.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/datatables.net-select/js/dataTables.select.min.js') }}"></script>
   <!-- Argon JS -->
-  <script src="{{asset('admin/assets/js/argon.js?v=1.1.0')}}"></script>
+  <script src="{{ asset('admin/assets/js/argon.js?v=1.1.0') }}"></script>
   <!-- Demo JS - remove this in your project -->
-  <script src="{{asset('admin/assets/js/demo.min.js')}}"></script>
+  <script src="{{ asset('admin/assets/js/demo.min.js') }}"></script>
   <!-- Argon JS -->
   <!-- Demo JS - remove this in your project -->
-  <script src="{{asset('admin/assets/js/demo.min.js')}}"></script>
+  <script src="{{ asset('admin/assets/js/demo.min.js') }}"></script>
   <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   @yield('script')
 
   <script>
-
     const form_logout = $('#form-logout');
     $('.logout').click(function(e) {
       e.preventDefault();
-        console.log("ok")
-        Swal.fire({
-          title: 'Apakah anda yakin untuk keluar?',
-          text: '',
-          icon: 'question',
-          showConfirmButton: true,
-          showCancelButton: true,
-          confirmButtonText: 'Yakin',
-          cancelButtonText: 'Batal'
-        }).then((result) => {
-          if (result.isConfirmed) {
-            console.log("ok")
-            form_logout.submit();
-          }
-        })
+      console.log("ok")
+      Swal.fire({
+        title: 'Apakah anda yakin untuk keluar?',
+        text: '',
+        icon: 'question',
+        showConfirmButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Yakin',
+        cancelButtonText: 'Batal'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          console.log("ok")
+          form_logout.submit();
+        }
+      })
     });
 
     const tambah_penyakit = $('#tambah-penyakit');
     $('.btn-tmbh-penyakit').click(function(e) {
       e.preventDefault();
       // console.log(document.forms["tambah-penyakit"]["definisi-penyakit"].value);
-      if (document.getElementById("nama-penyakit").value === null || document.getElementById("definisi-penyakit").value === null || document.getElementById("kendali-teknis").value === "" || document.getElementById("kendali-gejala").value === "") {
+      if (document.getElementById("nama-penyakit").value === null || document.getElementById("definisi-penyakit").value === null || document.getElementById("kendali-teknis").value === "" || document.getElementById("kendali-gejala").value === "" || document.getElementById("gambar-penyakit").value === "") {
         console.log("berhasil");
         Swal.fire({
           title: "Ada data yang masih kosong!",
@@ -107,25 +108,47 @@
             console.log("ok kosong");
           }
         });
-      }
-      else{
-        Swal.fire({
-          title: 'Apakah anda yakin untuk menambah data??',
-          text: '',
-          icon: 'question',
-          showConfirmButton: true,
-          showCancelButton: true,
-          confirmButtonText: 'Yakin',
-          cancelButtonText: 'Batal'
-        }).then((result) => {
-          if (result.isConfirmed) {
-            console.log("ok")
-            tambah_penyakit.submit();
-          }
-        })
+      } else {
+        const fileInput = document.getElementById('gambar-penyakit');
+        const file = fileInput.files[0];
+        if (file) {
+          const fileName = file.name;
+          const fileExtension = fileName.split('.').pop();
+          
+          if (fileExtension.toLowerCase() != "jpg" && fileExtension.toLowerCase() != "png" && fileExtension.toLowerCase() != "bmp" && fileExtension.toLowerCase() != "jpeg") {
+            console.log("masuk");
+            console.log(fileExtension.toLowerCase());
+            Swal.fire({
+              title: "File Ekstensi salah!",
+              text: "",
+              icon: "error",
+              confirmButtonText: 'Oke',
+            }).then((result) => {
+              if (result.isConfirmed) {
+                console.log("ok kosong");
+              }
+            });
+          } 
+          else {
+            console.log("yakin");
+            Swal.fire({
+              title: 'Apakah anda yakin untuk menambah data??',
+              text: '',
+              icon: 'question',
+              showConfirmButton: true,
+              showCancelButton: true,
+              confirmButtonText: 'Yakin',
+              cancelButtonText: 'Batal'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                console.log("ok")
+                tambah_penyakit.submit();
+              }
+            })
+          };
+        }
       }
       console.log("ok")
-      
     });
 
     const tambah_gejala = $('#tambah-gejala');
@@ -137,7 +160,8 @@
           cek_penyakit += 1
         }
       });
-      if (document.getElementById("nama_gejala").value === "" || document.getElementById("klasifikasi").value === "") {
+      if (document.getElementById("nama_gejala").value === "" || document.getElementById("klasifikasi").value ===
+        "") {
         Swal.fire({
           title: "Ada data yang masih kosong!",
           text: "",
@@ -148,8 +172,7 @@
             console.log("ok kosong");
           }
         });
-      }
-      else if (cek_penyakit <= 0) {
+      } else if (cek_penyakit <= 0) {
         Swal.fire({
           title: "Ada data yang masih kosong!",
           text: "",
@@ -160,8 +183,7 @@
             console.log("ok kosong");
           }
         });
-      }
-      else {
+      } else {
         Swal.fire({
           title: 'Apakah anda yakin untuk menambah data??',
           text: '',
@@ -177,7 +199,7 @@
           }
         })
       }
-        
+
     });
   </script>
 

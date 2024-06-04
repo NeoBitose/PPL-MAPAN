@@ -37,6 +37,164 @@
       // });
     });
 
+    const tambah_post = $('#tambah-post');
+    $('.btn-tambah-post').click(function(e) {
+      e.preventDefault();
+      // console.log(document.forms["tambah-penyakit"]["definisi-penyakit"].value);
+      console.log(document.getElementById("judul-post").value);
+      if (document.getElementById("judul-post").value.trim() === "") {
+        console.log("kosong");
+        Swal.fire({
+          title: "Judul masih kosong!",
+          text: "",
+          icon: "error",
+          confirmButtonText: 'Oke',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("ok kosong");
+          }
+        });
+      }
+
+      else if(document.getElementById("gambar-post").files.length > 0) {
+        const fileInput = document.getElementById('gambar-post');
+        const file = fileInput.files[0];
+        if (file) {
+          const fileName = file.name;
+          const fileExtension = fileName.split('.').pop();
+          
+          if (fileExtension.toLowerCase() != "jpg" && fileExtension.toLowerCase() != "png" && fileExtension.toLowerCase() != "bmp" && fileExtension.toLowerCase() != "jpeg") {
+            console.log("gambar kosong");
+            console.log(fileExtension.toLowerCase());
+            Swal.fire({
+              title: "File Ekstensi salah!",
+              text: "",
+              icon: "error",
+              confirmButtonText: 'Oke',
+            }).then((result) => {
+              if (result.isConfirmed) {
+                console.log("ok kosong");
+              }
+            });
+          } 
+          else{
+            console.log("yakin");
+            Swal.fire({
+              title: 'Apakah anda yakin untuk menambah data??',
+              text: '',
+              icon: 'question',
+              showConfirmButton: true,
+              showCancelButton: true,
+              confirmButtonText: 'Yakin',
+              cancelButtonText: 'Batal'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                console.log("ok")
+                tambah_post.submit();
+              }
+            })
+          }
+        }
+      }
+      else {
+        console.log("yakin");
+        Swal.fire({
+          title: 'Apakah anda yakin untuk menambah data??',
+          text: '',
+          icon: 'question',
+          showConfirmButton: true,
+          showCancelButton: true,
+          confirmButtonText: 'Yakin',
+          cancelButtonText: 'Batal'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("ok")
+            tambah_post.submit();
+          }
+        })
+      };
+      console.log("ok")
+    });
+
+    const edit_post = $('#edit-post');
+    $('.btn-edit-post').click(function(e) {
+      e.preventDefault();
+      // console.log(document.forms["tambah-penyakit"]["definisi-penyakit"].value);
+      console.log(document.getElementById("judul-post").value);
+      if (document.getElementById("judul-post").value.trim() === "") {
+        console.log("kosong");
+        Swal.fire({
+          title: "Judul masih kosong!",
+          text: "",
+          icon: "error",
+          confirmButtonText: 'Oke',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("ok kosong");
+          }
+        });
+      }
+
+      else if(document.getElementById("gambar-post").files.length > 0) {
+        const fileInput = document.getElementById('gambar-post');
+        const file = fileInput.files[0];
+        if (file) {
+          const fileName = file.name;
+          const fileExtension = fileName.split('.').pop();
+          
+          if (fileExtension.toLowerCase() != "jpg" && fileExtension.toLowerCase() != "png" && fileExtension.toLowerCase() != "bmp" && fileExtension.toLowerCase() != "jpeg") {
+            console.log("gambar kosong");
+            console.log(fileExtension.toLowerCase());
+            Swal.fire({
+              title: "File Ekstensi salah!",
+              text: "",
+              icon: "error",
+              confirmButtonText: 'Oke',
+            }).then((result) => {
+              if (result.isConfirmed) {
+                console.log("ok kosong");
+              }
+            });
+          } 
+          else{
+            console.log("yakin");
+            Swal.fire({
+              title: 'Apakah anda yakin untuk menambah data??',
+              text: '',
+              icon: 'question',
+              showConfirmButton: true,
+              showCancelButton: true,
+              confirmButtonText: 'Yakin',
+              cancelButtonText: 'Batal'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                console.log("ok")
+                edit_post.submit();
+              }
+            })
+          }
+        }
+      }
+      else {
+        console.log("yakin input");
+        Swal.fire({
+          title: 'Apakah anda yakin untuk menambah data??',
+          text: '',
+          icon: 'question',
+          showConfirmButton: true,
+          showCancelButton: true,
+          confirmButtonText: 'Yakin',
+          cancelButtonText: 'Batal'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("ok")
+            edit_post.submit();
+          }
+        })
+      };
+      console.log("ok")
+    });
+
     var bars_post = document.getElementsByClassName("bars-postingan");
     console.log(bars_post);
     var j;

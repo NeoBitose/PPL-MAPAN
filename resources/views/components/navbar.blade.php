@@ -27,7 +27,7 @@
           @if (auth()->user())
             <div class="profile">
               <img
-                src="@if (auth()->user()->foto_profile != '') {{ asset('img/profile/' . auth()->user()->foto_profile) }} @endif ">
+                src="@if (auth()->user()->foto_profile != '') {{ asset('img/profile/' . auth()->user()->foto_profile) }} @else {{ asset('img/profile/user.jpg') }} @endif ">
               <p>{{ auth()->user()->name }}</p>
             </div>
           @else

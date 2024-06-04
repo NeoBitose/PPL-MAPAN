@@ -6,7 +6,7 @@
       <div class="card-update-profile">
         <h1 class="">Edit Akun</h1>
         <div class="d-flex gap-5 align-items-center">
-          <img src="{{ asset('img/profile/'.auth()->user()->foto_profile) }}" class="" alt="">
+          <img src="@if (auth()->user()->foto_profile != '') {{ asset('img/profile/' . auth()->user()->foto_profile) }} @else {{ asset('img/profile/user.jpg') }} @endif" class="" alt="">
           <form action="/hapus-foto/{{auth()->user()->id}}" method="post" class="form-delete-foto">
             @csrf
             <button>Hapus</button>

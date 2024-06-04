@@ -6,7 +6,7 @@
       <form action="#" class="">
         <div class="profile-data">
           <div class="card-left">
-            <img src="{{ asset('img/profile/'.auth()->user()->foto_profile) }}" alt="">
+            <img src="@if (auth()->user()->foto_profile != '') {{ asset('img/profile/'.auth()->user()->foto_profile) }} @else {{ asset('img/profile/user.jpg') }} @endif" alt="">
             <h1>{{ auth()->user()->name }}</h1>
             <a href="/edit-user/">
               <button type="button" class="">Edit Akun</button>

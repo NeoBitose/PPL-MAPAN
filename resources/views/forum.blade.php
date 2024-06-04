@@ -40,7 +40,7 @@
         <div class="card-postingan" id="{{ $item['id_postingan'] }}">
           <div class="d-flex justify-content-between align-items-center">
             <div class="user-postingan">
-              <img src="@if($item['foto_profile'] != "") {{ asset('img/profile/' . $item['foto_profile']) }} @endif" alt="">
+              <img src="@if($item['foto_profile'] != "") {{ asset('img/profile/' . $item['foto_profile']) }} @else {{ asset('img/profile/user.jpg') }} @endif" alt="">
               <div class="user-detail">
                 <h5>{{ $item['name'] }}</h5>
                 <h6>{{ $item['email'] }}</h6>

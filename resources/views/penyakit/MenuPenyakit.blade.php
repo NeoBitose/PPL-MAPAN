@@ -16,7 +16,7 @@
         <label for="">Pengendalian Gejala</label>
         <input type="text" name="gejala" id="kendali-gejala">
         <label for="">Foto Penyakit</label>
-        <input type="file" name="gambar">
+        <input type="file" name="gambar" id="gambar-penyakit">
         <button type="submit" class="btn-tmbh-penyakit">
           Tambah Penyakit
         </button>
@@ -80,7 +80,25 @@
       </table>
     </div>
   </div>
+  {{-- <script>
+    const fileInput = document.getElementById('gambar-penyakit');
+    const file = fileInput.files[0];
+    if (file) {
+      const fileName = file.name;
+      const fileExtension = fileName.split('.').pop();
+    };
 
+    fileInput.addEventListener('change', function() {
+        const file = fileInput.files[0];
+        if (file) {
+            const fileName = file.name;
+            const fileExtension = fileName.split('.').pop();
+            fileExtensionDisplay.textContent = `Ekstensi file: ${fileExtension}`;
+        } else {
+            fileExtensionDisplay.textContent = 'Tidak ada file yang dipilih';
+        }
+    });
+  </script> --}}
   <script>
     let arry_penyakit = <?php echo json_encode($penyakit); ?>;
     console.log(arry_penyakit);
