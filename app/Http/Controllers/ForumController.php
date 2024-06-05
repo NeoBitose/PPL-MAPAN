@@ -48,9 +48,9 @@ class ForumController extends Controller
                         ->leftjoin('komentar', 'komentar.postingan_id', '=', 'postingan.id_postingan')
                         ->join('users', 'postingan.users_id', '=', 'users.id')
                         ->select('id_postingan', 'judul_postingan', "deskripsi", "tgl_upload", "gambar_postingan", "name", "email", "foto_profile" , 'komentar', 'active_nonactive')
-                        // ->where('judul_postingan', 'LIKE', "%$request->cari%")
-                        // ->orWhere('name', 'LIKE', "%$request->cari%")
-                        // ->orWhere('komentar', 'LIKE', "%$request->cari%")
+                        ->where('judul_postingan', 'LIKE', "%$request->cari%")
+                        ->orWhere('name', 'LIKE', "%$request->cari%")
+                        ->orWhere('komentar', 'LIKE', "%$request->cari%")
                         ->orderBy('id_postingan')
                         ->get();
         // dd($postingan);

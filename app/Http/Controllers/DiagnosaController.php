@@ -103,18 +103,19 @@ class DiagnosaController extends Controller
         $this->param['malai'] = $malai;
 
         $gejala = $request->gejala;
-        $input = "";
-        for ($i=0; $i < count($gejala); $i++) { 
-            if ($i == 0) {
-                $input = $gejala[$i];
-            }else{
-                $input = $input." ".$gejala[$i];
-            }
-        }
+        // dd($gejala);
+        // $input = "";
+        // for ($i=0; $i < count($gejala); $i++) { 
+        //     if ($i == 0) {
+        //         $input = $gejala[$i];
+        //     }else{
+        //         $input = $input." ".$gejala[$i];
+        //     }
+        // }
         try {
             $response = Http::withUrlParameters([
                 'endpoint' => 'http://127.0.0.1:5000',
-                'gejala' => $input,
+                'gejala' => $gejala,
             ])->acceptJson()->get('{+endpoint}/diagnosa/{gejala}');
 
             $resp = $response->json();
@@ -128,10 +129,11 @@ class DiagnosaController extends Controller
 
             for ($i=0; $i < 3; $i++) { 
                 $int = floatval($resp[1][$i]["value"]);
-                // dd($int);
+                // dd($resp[1][$i]["value"]);
                 $persen = ($int / 1) * 100;
                 $probabilitas[$i] = [$resp[1][$i]["name"], $persen];
             }
+            // dd($probabilitas);
             
             $this->param['probabilitas'] = [$probabilitas];
             // dd($probabilitas);
