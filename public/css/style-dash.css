@@ -1,3 +1,19 @@
+button{
+  line-height: normal;
+}
+.borders{
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+.card-dash{
+  position: relative;
+  bottom: 50px;
+}
+.card-dash h1{
+  font-size: 24px;
+  color: #1F4E3C;
+  font-weight: 600;
+}
 .card-update{
   position: relative;
   bottom: 50px;
@@ -7,7 +23,53 @@
   border-radius: 10px;
   padding: 40px 80px;
   margin: auto;
-
+}
+.card-data{
+  position: relative;
+  bottom: 50px;
+  width: 100%;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin: auto;
+}
+.form-data{
+  display: flex;
+  flex-direction: column;
+  padding: 0px 30px 30px 30px;
+}
+.form-data label{
+  margin: 10px 0px 20px 5px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.form-data input, select{
+  padding: 15px 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  line-height: normal;
+}
+.form-data textarea{
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.form-data button{
+  width: 200px;
+  height: 50px;
+  color: white;
+  background-color: #1F4E3C;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.check-penyakit {
+  margin: 20px;
 }
 .form-update{
   display: flex;
@@ -41,4 +103,21 @@
   border: none;
   border-radius: 10px;
   margin-top: 20px;
+}
+table tr{
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+table th td{
+  border: 1px solid black th td;
+  width: 200px;
+}
+table p {
+  margin: 0px 20px;
+}
+
+@media(max-width:768px){
+  .card-update{
+    padding: 40px 40px;
+  }
 }

@@ -6,10 +6,35 @@ body{
   min-width: 100vw;
   min-height: 100vh;
 }
+ul{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+ol li{
+  list-style-type: decimal;
+}
+nav{
+  padding: 15px 0px;
+}
+.w-60{
+  width: 60%;
+}
+.w-40{
+  width: 40%;
+}
 .flex{
   display: flex;
   gap: 10px;
   align-items: center;
+}
+.title-index{
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 100vw;
+  color: #1F4E3C;
 }
 .navbar-brand{
   display: flex;
@@ -18,7 +43,7 @@ body{
 }
 .navbar-brand img{
   width: 45px;
-  height: 45px;
+  height: auto;
 }
 .navbar button{
   width: 83px;
@@ -26,6 +51,14 @@ body{
   border: none;
   color: white;
   border-radius: 5px;
+}
+.navbar-toggler{
+  display: flex;
+  justify-content: end;
+  overflow: hidden;
+}
+.nav-link{
+  margin-left: 0px;
 }
 .main-foot h1{
   font-size: 32px;
@@ -44,11 +77,52 @@ body{
 .footer-link h4{
   font-size: 15px;
   color: #27AE60;
+  margin-bottom: 15px;
+}
+.footer-link li{
+  margin-bottom: 5px;
 }
 .footer-link a{
   font-size: 15px;
-  color: white;
+  color: #BDBDBD;
   text-decoration: none;
+  font-weight: 500;
+}
+.footer-link a:hover{
+  color: white;
+}
+.footer-content{
+  display: flex;
+}
+.footer-left{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-right: 20px;
+}
+.footer-left p{
+  text-align: center;
+  color: white;
+  font-weight: 500;
+}
+.footer-right{
+  width: 80%;
+  border-left: 1px solid white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.kontak h2{
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 30px;
+}
+.kontak i {
+  overflow-y: hidden;
 }
 .copyright{
   height: 65px;
@@ -161,11 +235,82 @@ body{
   border: none;
   padding: 0px;
 }
+.hero-page{
+  margin-top: 70px;
+}
+
+@media(min-width: 769px){
+  /* .navbar{
+    height: 80px;
+  } */
+  .nav-link{
+    margin-left: 20px;
+  }
+  .hero-page{
+    margin-top: 80px ;
+  }
+}
+
+@media (max-width:768px){
+  /* nav{
+    padding: 15px 0px;
+  } */
+  .profile{
+    justify-content: start;
+  }
+  .content-profile{
+    
+    top: 290px;
+  }
+  .detail-content-profile{
+    display: flex;
+    justify-content: start;
+  }
+}
+
+@media (max-width:425px) {
+  .footer-content{
+    display: block;
+  }
+  .footer-left{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: auto;  
+  }
+  .footer-left p{
+    text-align: center;
+    color: white;
+    font-weight: 500;
+  }
+  .footer-right{
+    width: 80%;
+    border-left: 0px;
+    padding: 20px 40px;
+    display: block;
+    justify-content: space-between;
+  }
+  .kontak{
+    margin-top: 20px;
+  }
+  .kontak h2{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 20px;
+  }
+  .kontak i {
+    overflow-y: hidden;
+  }
+}
 
 /* Index */
 
 .hero{
-  background-image: url('../img/hero.png');
+  background-image: url('../img/heroo.png');
   background-size: cover;
   background-repeat: none;
   width: 100vw;
@@ -203,13 +348,14 @@ body{
 }
 .card-group{
   background-image: url('../img/card-bg.png');
-  background-size: 100vw 80vh;
+  background-size: 100vw auto;
   background-repeat: no-repeat;
   width: 100vw;
-  height: 80vh;
+  padding: 100px 0px;
+  /* height: 80vh; */
 }
 .card img{
-  width: 280px;
+  width: 100%;
   height: 290px;
   object-fit: cover;
 }
@@ -225,6 +371,100 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.tentang{
+  padding: 100px 0px;
+}
+.tentang-content{
+  display: flex;
+}
+.tentang-left{
+  width: 40%;
+}
+.tentang-right{
+  width: 50%;
+}
+.tentang p{
+  text-align: justify;
+}
+.tentang h5{
+  font-size: 24px;
+  font-weight: 600;
+}
+.tentang td{
+  vertical-align: top;
+  padding-right: 10px;
+  text-align: justify;
+}
+.fitur{
+  padding: 100px 0px;
+  background-color: #F3F4F6;
+}
+.card-fitur{
+  border: 2px solid #1F4E3C;
+  padding: 30px;
+  border-radius: 10px;
+}
+.img-fitur{
+  width: 40px;
+  margin-left: 10px;
+}
+.card-fitur h5{
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.card-fitur p{
+  font-size: 14px;
+  margin-bottom: 50px;
+  text-align: justify;
+}
+
+@media (max-width:1400px){
+  .card img{
+    height: 220px;
+    object-fit: cover;
+  }
+  .card-landing{
+    height: 100px;
+  }
+}
+@media (max-width:768px){
+  .card-group{
+    background-image: none;
+  }
+  .card img{
+    height: 170px;
+    object-fit: cover;
+  }
+  .hero h1{
+    font-size: 45px;
+  }
+  .hero h1 span{
+    color: #FA9B0D;
+  }
+  .hero p{
+    font-size: 20px;
+  }
+  .tentang-content{
+    display: block;
+  }
+  .tentang-left{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .tentang-left img{
+    padding-bottom: 20px;
+  }
+  .tentang-right{
+    width: 85%;
+    margin: auto;
+  }
+  .card-fitur p{ 
+    margin-bottom: 30px;
+  }
 }
 
 /* Diagnosa */
@@ -243,7 +483,7 @@ label{
   color: white;
 }
 .diagnosa-card h1{
-  font-size: 60px;
+  font-size: 45px;
 }
 .diagnosa-card h3{
   font: size 32px;
@@ -254,11 +494,16 @@ label{
 .main-deteksi{
   height: 70vh;
 }
+.hasil-footer{
+  border-top: 2px solid #1F4E3C;
+  background-color: #E6E6E6;
+}
+
 
 /* Forum */
 
 .header-forum{
-  width: 980px;
+  width: 100vh;
   display: flex;
   justify-content: space-between;
 }
@@ -308,7 +553,7 @@ label{
 }
 .card-postingan{
   position: relative;
-  width: 980px;
+  width: 100vh;
   padding: 40px;
   background-color: white;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -509,6 +754,38 @@ label{
   height: 18px;
 }
 
+@media(max-width:1440px){
+  .btn-postingan button{
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+@media(max-width:768px){
+  .header-forum{
+    width: 80vh;
+  }
+  .card-postingan{
+    width: 80vh;
+  }
+  .gambar-postingan img{
+    width: 100%;
+  }
+}
+@media(max-width:425px){
+  .search-form input{
+    font-size: 12px;
+  }
+  .header-forum{
+    width: 50vh;
+  }
+  .card-postingan{
+    width: 50vh;
+    /* box-shadow: none; */
+  }
+}
+
 /* Profile */
 
 .hero-profile{
@@ -639,16 +916,9 @@ label{
   margin-top: 20px;
 }
 
-
-@media(min-width: 768px){
-  .navbar{
-    height: 80px;
-  }
-  .nav-link{
-    margin-left: 20px;
-  }
-  .hero-page{
-    margin-top: 80px ;
+@media(max-width:768px){
+  .card-update-profile{
+    padding: 40px 50px;
   }
 }
 

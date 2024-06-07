@@ -29,7 +29,7 @@
                     @php
                         $no++
                     @endphp
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6">
                       <div class="form-check">
                         <input class="form-check-input" name="gejala[]" type="checkbox" value="{{$daun[$i]->gejala}}" id="gejala{{$daun[$i]->id_gejala}}">
                         <label class="form-check-label" for="gejala{{$daun[$i]->id_gejala}}">
@@ -61,7 +61,7 @@
                       @php
                         $no++
                       @endphp
-                      <div class="col-6">
+                      <div class="col-12 col-lg-6">
                         <div class="form-check">
                           <input class="form-check-input" name="gejala[]" type="checkbox" value="{{$tangkai[$i]->gejala}}" id="gejala{{$tangkai[$i]->id_gejala}}">
                           <label class="form-check-label" for="gejala{{$tangkai[$i]->id_gejala}}">
@@ -93,7 +93,7 @@
                     @php
                         $no++
                     @endphp
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6">
                       <div class="form-check">
                         <input class="form-check-input" name="gejala[]" type="checkbox" value="{{$malai[$i]->gejala}}" id="gejala{{$malai[$i]->id_gejala}}">
                         <label class="form-check-label" for="gejala{{$malai[$i]->id_gejala}}">
@@ -114,7 +114,7 @@
       </form>
     </div>
     {{-- @php
-        dd($diagnosa);
+        dd($probabilitas);
     @endphp --}}
     @if ($diagnosa[0] != null)
     <div class="container py-5">
@@ -125,7 +125,7 @@
           </h3>
         </div>
         <div class="card-body text-primary hasil-diagnosa p-4">
-          <h1 class="card-title fw-bold">Penyakit {{$diagnosa[0]->nama_penyakit}}</h1>
+          <h1 class="card-title fw-bold">{{number_format($probabilitas[0][0][1], 2)}}% - Penyakit {{$diagnosa[0]->nama_penyakit}}</h1>
           <p class="card-text">
             {{$diagnosa[0]->definisi}}
           </p>
@@ -138,11 +138,17 @@
             {{$diagnosa[0]->pengendalian_gejala}}
           </p>
         </div>
+        <div class="card-footer text-primary hasil-footer p-4">
+          <h3 class="card-title fw-bold">Probabilitas Penyakit Lain:</h3>
+          <p class="card-text mb-2">
+            {{number_format($probabilitas[0][1][1],2)}}% - {{$probabilitas[0][1][0]}}
+          </p>
+          <p class="card-text mb-2">
+            {{number_format($probabilitas[0][2][1],2)}}% - {{$probabilitas[0][2][0]}}
+          </p>
+        </div>
       </div>
     </div>
     @endif
-  </div>
-  <div class="copyright text-center w-100 bg-dark py-4">
-    <h4 class="text-white m-0">MAPAN Copyright © 2024 | Made With Love</h4>
   </div>
 @endsection

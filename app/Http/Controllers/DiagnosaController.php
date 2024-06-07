@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gejala;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use GuzzleHttp\Client;
@@ -16,8 +17,7 @@ class DiagnosaController extends Controller
     private $param;
     public function index()
     {
-        $daun = DB::table('gejala')
-                    ->join('klasifikasi_gejala', 'gejala.klasifikasi_gejala_id', '=', 'klasifikasi_gejala.id_klasifikasi_gejala')
+        $daun = Gejala::join('klasifikasi_gejala', 'gejala.klasifikasi_gejala_id', '=', 'klasifikasi_gejala.id_klasifikasi_gejala')
                     ->where('nama_bagian', 'daun')
                     ->get();
         $tangkai = DB::table('gejala')
@@ -85,29 +85,6 @@ class DiagnosaController extends Controller
     }
 
     public function diagnosa(Request $request){
-        // $konfirmasi = Alert::question('Apakah Inputan Sudah Sesuai?', '* Semakin sedikit inputan semakin tidak akurat (Optimal input : 3)');
-        // dd($konfirmasi);
-        // if ($request->gejala == null) {
-        //     Alert::error('', '');
-        //     return redirect('/diagnosa');
-        // }
-
-        $gejala = $request->gejala;
-        $input = "";
-        for ($i=0; $i < count($gejala); $i++) { 
-            if ($i == 0) {
-                $input = $gejala[$i];
-            }else{
-                $input = $input." ".$gejala[$i];
-            }
-        }
-        $response = Http::withUrlParameters([
-            'endpoint' => 'http://127.0.0.1:5000',
-            'gejala' => $input,
-        ])->acceptJson()->get('{+endpoint}/diagnosa/{gejala}');
-        $diags = DB::table('penyakit')
-                    ->where('nama_penyakit', $response->body())
-                    ->first();
         
         $daun = DB::table('gejala')
                     ->join('klasifikasi_gejala', 'gejala.klasifikasi_gejala_id', '=', 'klasifikasi_gejala.id_klasifikasi_gejala')
@@ -124,10 +101,48 @@ class DiagnosaController extends Controller
         $this->param['daun'] = $daun;
         $this->param['tangkai'] = $tangkai;
         $this->param['malai'] = $malai;
-        $this->param['diagnosa'] = [$diags];
-        $title = 'Apakah inputan sudah sesuai?';
-        $text = 'semakin sedikit inputan semakin tidak akurat (Optional input: 3)';
-    
+
+        $gejala = $request->gejala;
+        // dd($gejala);
+        // $input = "";
+        // for ($i=0; $i < count($gejala); $i++) { 
+        //     if ($i == 0) {
+        //         $input = $gejala[$i];
+        //     }else{
+        //         $input = $input." ".$gejala[$i];
+        //     }
+        // }
+        try {
+            $response = Http::withUrlParameters([
+                'endpoint' => 'http://127.0.0.1:5000',
+                'gejala' => $gejala,
+            ])->acceptJson()->get('{+endpoint}/diagnosa/{gejala}');
+
+            $resp = $response->json();
+            
+            $diags = DB::table('penyakit')
+                    ->where('nama_penyakit', $resp[0]["name"])
+                    ->first();
+            $this->param['diagnosa'] = [$diags];
+            
+            $probabilitas = [];
+
+            for ($i=0; $i < 3; $i++) { 
+                $int = floatval($resp[1][$i]["value"]);
+                // dd($resp[1][$i]["value"]);
+                $persen = ($int / 1) * 100;
+                $probabilitas[$i] = [$resp[1][$i]["name"], $persen];
+            }
+            // dd($probabilitas);
+            
+            $this->param['probabilitas'] = [$probabilitas];
+            // dd($probabilitas);
+        } 
+        catch (\Throwable $e) {
+            echo("<script>alert('Model Gagal Diakses!');window.location.href = '/diagnosa'</script>");
+        }
+        // dd($diags->nama_penyakit);
+        // dd($probabilitas[0][1]);
         return view('diagnosa', $this->param);
     }
 }

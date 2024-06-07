@@ -4,10 +4,11 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DiagnosaController;
+use App\Http\Controllers\ForumController;
 use App\Http\Controllers\GejalaPenyakitController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\KomentarController;
-use App\Http\Controllers\PenyakitController;
+use App\Http\Controllers\MenuPenyakit;
 use App\Http\Controllers\PostinganController;
 
 /*
@@ -24,8 +25,8 @@ use App\Http\Controllers\PostinganController;
 Route::get('/', [IndexController::class, 'index']);
 Route::resource('/diagnosa', DiagnosaController::class);
 Route::post('/hasil-diagnosa', [DiagnosaController::class, 'diagnosa']);
-Route::get('/forum', [IndexController::class, 'forum']);
-Route::get('/search', [IndexController::class, 'search']);
+Route::get('/forum', [ForumController::class, 'index']);
+Route::post('/search', [ForumController::class, 'search']);
 Route::get('/komentar', [PostinganController::class, 'komentar']);
 
 Route::get('/dashboard', function () {
@@ -53,8 +54,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('/postingan', PostinganController::class);
     Route::resource('/komentar', KomentarController::class);
 
-    Route::resource('/penyakit', PenyakitController::class);
-    Route::resource('/gajala-penyakit', GejalaPenyakitController::class);
+    Route::resource('/penyakit', MenuPenyakit::class);
+    Route::resource('/gejala-penyakit', GejalaPenyakitController::class);
 
 });
 

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('gejala', function (Blueprint $table) {
             $table->increments('id_gejala');
-            $table->string('gejala', 200);
+            $table->string('gejala');
             $table->unsignedInteger('klasifikasi_gejala_id');
 
             $table->foreign('klasifikasi_gejala_id')->references('id_klasifikasi_gejala')->on('klasifikasi_gejala');

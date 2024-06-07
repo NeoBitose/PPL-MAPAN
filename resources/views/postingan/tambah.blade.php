@@ -8,21 +8,24 @@
   <div class="container tambah-postingan">
     <h1 class="">Tambah Postingan</h1>
     <div class="card-update-profile">
-      <form action="/postingan" method="POST" class="form-data" enctype="multipart/form-data">
+      <form action="/postingan" method="POST" class="form-data" enctype="multipart/form-data" id="tambah-post">
         @csrf
         <label for="">Judul Postingan:</label>
-        <input type="text" name="judul">
+        <input type="text" id="judul-post" name="judul">
         
         <label for="">Deskripsi Postingan:</label>
-        <textarea name="deskripsi" id="" cols="30" rows="10"></textarea>
+        <textarea name="deskripsi" id="desk-post" cols="30" rows="10"></textarea>
         
         <label for="">Foto (kosongi jika tidak ingin upload foto):</label>
-        <input type="file" name="gambar">
+        <input type="file" name="gambar" id="gambar-post">
 
         <div class="d-flex">
-          <button type="submit" class="bg-primary">Simpan Data</button>
+          <button type="submit" class="bg-primary btn-tambah-post">Simpan Data</button>
         </div>
       </form>
     </div>
   </div>
+  <script>
+    
+  </script>
 @endsection

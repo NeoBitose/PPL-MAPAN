@@ -35,7 +35,7 @@
         <div class="card-postingan">
           <div class="d-flex justify-content-between align-items-center">
             <div class="user-postingan">
-              <img src="{{ asset('img/profile/' . $item['foto_profile']) }}" alt="">
+              <img src="@if (auth()->user()->foto_profile != '') {{ asset('img/profile/' . auth()->user()->foto_profile) }} @else {{ asset('img/profile/user.jpg') }} @endif" alt="">
               <div class="user-detail">
                 <h5>{{ $item['name'] }}</h5>
                 <h6>{{ $item['email'] }}</h6>

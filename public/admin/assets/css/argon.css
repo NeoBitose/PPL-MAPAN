@@ -1980,6 +1980,7 @@ pre code
 .table-sm th,
 .table-sm td
 {
+    width: 100px;
     padding: .5rem;
 }
 
